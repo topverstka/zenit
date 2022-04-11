@@ -428,7 +428,7 @@ header {
     transition: $tr;
     width: 74px;
     &._active {
-        width: 40%;
+        width: calc(40% - 40px);
         input {
             width: 100%
         }

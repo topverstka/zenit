@@ -1,0 +1,14 @@
+.news-page__box {
+    .section_news__element-link {
+        margin: 4px 0 12px 0;
+        opacity: 1;
+        height: auto;
+        line-height: 30px;
+    }
+    .section_news__element:hover .section_news__element-link {
+        margin: 4px 0 12px 0;
+    }
+    .section_news__container {
+        grid-gap: 50px 30px
+    }
+}

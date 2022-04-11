@@ -1,0 +1,52 @@
+.form-page {
+    background: $bg-block;
+    border-radius: $radius;
+    padding: 20px 20px 30px;
+    width: 645px;
+    margin-bottom: 50px;
+}
+
+.form-page__forms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 30px;
+    input[type=text] {
+        height: 30px;
+        background: transparent;
+        &::placeholder {
+            color: rgba(34, 34, 34, 0.3);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    textarea {
+        grid-column: 3/1;
+        height: 141px;
+        background: transparent;
+        border: 1px solid rgba(34, 34, 34, 0.3);
+        border-radius: $radius;
+        padding: 8px 15px;
+        resize: none;
+        &::placeholder {
+            color: rgba(34, 34, 34, 0.3);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    input[type=submit] {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 7px 20px 8px;
+        width: max-content;
+    }
+}
+
+.content-page__text .form-page__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 44px;
+    margin-top: -7px;
+}
