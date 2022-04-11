@@ -314,27 +314,27 @@ function pageX(elem) {
 
 if (document.querySelector('.section_maps__maps')) {
     document.querySelector('.section_maps__maps').addEventListener('mouseover', function(e) {
-        // if (e.target.tagName === 'path') {
-        let leftContainer = document.querySelector('#interactive-maps').getBoundingClientRect().left + 35;
-        let topContainer = document.querySelector('#interactive-maps').getBoundingClientRect().top + 30;
-        let widthElement = e.target.getBoundingClientRect().width;
-        let heightElement = e.target.getBoundingClientRect().height;
-        let top = (e.target.getBoundingClientRect().top - topContainer) + (heightElement / 2);
-        let left = (e.target.getBoundingClientRect().left - leftContainer) + (widthElement / 2);
-        let addCoordX = e.target.getAttribute('data-add-coordx') ? e.target.getAttribute('data-add-coordx') : 0;
+        if (e.target.tagName === 'path') {
+            let leftContainer = document.querySelector('#interactive-maps').getBoundingClientRect().left + 35;
+            let topContainer = document.querySelector('#interactive-maps').getBoundingClientRect().top + 30;
+            let widthElement = e.target.getBoundingClientRect().width;
+            let heightElement = e.target.getBoundingClientRect().height;
+            let top = (e.target.getBoundingClientRect().top - topContainer) + (heightElement / 2);
+            let left = (e.target.getBoundingClientRect().left - leftContainer) + (widthElement / 2);
+            let addCoordX = e.target.getAttribute('data-add-coordx') ? e.target.getAttribute('data-add-coordx') : 0;
 
-        document.querySelector('.section_maps__maps-mouse').style.cssText = `
+            document.querySelector('.section_maps__maps-mouse').style.cssText = `
         top: ${parseInt(top)}px;
         left: ${parseInt(left) + parseInt(addCoordX)}px
     `;
 
-        console.log(addCoordX)
-        document.querySelector('.section_maps__maps-mouse').innerText = e.target.dataset.region
-            // } else {
-            //     document.querySelector('.section_maps__maps-mouse').style = null;
-            //     document.querySelector('.section_maps__maps-mouse').innerText = '';
-            // }
-            // console.log(e.target.offsetLeft)
+            console.log(addCoordX)
+            document.querySelector('.section_maps__maps-mouse').innerText = e.target.dataset.region
+        } else {
+            document.querySelector('.section_maps__maps-mouse').style = null;
+            document.querySelector('.section_maps__maps-mouse').innerText = '';
+        }
+        console.log(e.target.offsetLeft)
     });
 }
 
@@ -379,9 +379,15 @@ function showMenu(target) {
     let heightElement = document.querySelector(target).scrollHeight;
     document.querySelectorAll('.dropdown').forEach(i => {
         i.addEventListener('click', () => {
+            document.querySelectorAll(target).forEach(el => {
+                el.classList.remove('_show');
+                el.style = null;
+            });
+
             if (!i.querySelector(target).style.height) {
                 i.querySelector(target).style.height = heightElement + 'px';
                 i.querySelector(target).classList.add('_show');
+
             } else {
                 i.querySelector(target).style.height = null;
                 i.querySelector(target).classList.remove('_show');
@@ -391,3 +397,7 @@ function showMenu(target) {
 }
 
 showMenu('.header-all__bottom__list-children');
+
+if (window.matchMedia('(max-width: 992px)').matches) {
+    document.querySelector('header').classList.add('mobile-grid');
+}

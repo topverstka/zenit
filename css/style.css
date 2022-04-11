@@ -1311,6 +1311,16 @@ h1 {
 header {
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+header.mobile-grid .container {
+  padding: 0;
+}
+
+header.mobile-grid .header_mobile {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .header-all {
@@ -1320,9 +1330,9 @@ header {
 @media (max-width: 992px) {
   .header-all {
     position: absolute;
-    top: 36px;
+    border-radius: 0px var(--radius) var(--radius) 0px;
+    top: 40px;
     left: 0;
-    z-index: 99999;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -1339,8 +1349,6 @@ header {
             transform: translateY(-10px);
     -webkit-transition: var(--tr);
     transition: var(--tr);
-    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   }
   .header-all._show {
     opacity: 1;
@@ -1462,6 +1470,9 @@ header {
           justify-content: space-between;
   width: 100%;
   padding: 11px 0;
+  z-index: 9999;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
 .header_mobile._active .header_mobile__search {
@@ -2833,6 +2844,7 @@ header {
   content: '';
   position: absolute;
   background: url(../img/icons/arrow_plashka.svg) no-repeat;
+  background-size: cover;
   bottom: -10px;
   left: 0;
   right: 0;

@@ -21,15 +21,25 @@
 
 header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    &.mobile-grid {
+        .container {
+            padding: 0
+        }
+        .header_mobile {
+            padding-left: 8px;
+            padding-right: 8px
+        }
+    }
 }
 
 .header-all {
     width: 100%;
     @media (max-width: $laptop-m) {
         position: absolute;
-        top: 36px;
+        border-radius: 0px $radius $radius 0px;
+        top: 40px;
         left: 0;
-        z-index: 99999;
         flex-direction: column-reverse;
         background: #fff;
         display: flex;
@@ -39,7 +49,7 @@ header {
         z-index: -1;
         transform: translateY(-10px);
         transition: $tr;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+        // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
         &._show {
             opacity: 1;
             z-index: 9999;
@@ -133,6 +143,8 @@ header {
     justify-content: space-between;
     width: 100%;
     padding: 11px 0;
+    z-index: 9999;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     &._active {
         .header_mobile__search {
             width: calc(100% - 64px);
