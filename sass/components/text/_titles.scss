@@ -1,0 +1,50 @@
+h2 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    &.line {
+        position: relative;
+        width: max-content;
+        margin: auto;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: -7px;
+            border-bottom: 5px solid $accent;
+        }
+    }
+    @media (max-width:$tablet) {
+        font-size: 22px;
+        line-height: 30px;
+        &.line {
+            margin-left: 0;
+            margin-right: auto;
+            &:after {
+                margin: 0
+            }
+        }
+    }
+    @media (max-width:$mobile-l) {
+        &.line {
+            &:after {
+                border-bottom: 2px solid var(--accent);
+                width: 148px;
+            }
+        }
+    }
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    @media (max-width: $mobile-l) {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}

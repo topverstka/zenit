@@ -1,0 +1,21 @@
+.breadcrumbs {
+    margin: 17px 0 24px 0
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    li {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba(34, 34, 34, 0.3);
+        &:not(:last-child):after {
+            content: "/";
+        }
+        &:last-child {
+            color: $main;
+            margin-left: 3px
+        }
+    }
+}

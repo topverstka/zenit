@@ -1,0 +1,58 @@
+.consultant_block {
+    background: $accent;
+    width: 307px;
+    padding: 28px 39px 36px 39px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    border-radius: $radius;
+    h2 {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    @media (max-width:$tablet) {
+        width: 100%;
+        h2 {
+            text-align: left;
+        }
+    }
+    @media (max-width:$mobile-l) {
+        padding: 11px 45px 13px 45px;
+        margin-top: 31px;
+        h2 {
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 13px;
+        }
+    }
+}
+
+.consultant_block__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.consultant_block__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    margin-top: 28px;
+    display: block;
+    @media (max-width: $mobile-l) {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

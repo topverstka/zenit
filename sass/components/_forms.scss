@@ -1,0 +1,129 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-elem {
+    position: relative;
+    width: 100%;
+    &:not(:first-child) {
+        margin: 8px 0 0 0;
+    }
+}
+
+.form-elem input {
+    height: 40px;
+    @media (max-width: $mobile-l) {
+        height: 32px;
+        padding: 9px 10px;
+        line-height: 100;
+        &::placeholder {
+            font-size: 10px;
+            line-height: 100;
+        }
+    }
+}
+
+.form-elem textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 190px;
+    transition: 0s;
+}
+
+.form-elem__area {
+    width: 100%;
+    background: #F9F9F9;
+    border-radius: $radius;
+    transition: $tr;
+    border: 1px solid rgba(34, 34, 34, 0.3);
+    background: #FFFFFF;
+    padding-left: 15px;
+    &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(34, 34, 34, 0.3);
+    }
+    &:hover {
+        // background: #F4F4F4;
+    }
+    &:focus {
+        &+.form-elem__label {
+            font-size: 10px;
+            color: $second;
+            transform: translate(0, calc(-50% - 9px));
+        }
+    }
+    &:not(:placeholder-shown).form-elem__area:not(:focus) {
+        // border: 1px solid $accent;
+        &+.form-elem__label {
+            font-size: 10px;
+            color: $second;
+            transform: translate(0, calc(-50% - 9px));
+        }
+    }
+    &._error {
+        border: 1px solid $error !important;
+        &+.form-elem__label {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+input[type=text] {
+    border: 1px solid rgba(34, 34, 34, 0.3);
+    border-radius: $radius;
+    padding: 10px 0 10px 15px;
+    &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: rgba(34, 34, 34, 0.3);
+    }
+}
+
+input[type=submit] {
+    background: $accent;
+    border-radius: 1px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    padding: 7px 20px 8px 20px;
+    &:hover {
+        background: $accent-hover
+    }
+}
+
+.form-elem__label {
+    position: absolute;
+    top: 30px;
+    left: 12px;
+    width: 100%;
+    transform: translate(0, -50%);
+    font-size: 14px;
+    font-weight: 400;
+    pointer-events: none;
+    transition: $tr;
+    &::after {
+        content: 'Error';
+        font-size: inherit;
+        color: $error;
+        margin: 0 0 0 6px;
+        opacity: 0;
+    }
+}
+
+.form-elem__required {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    display: block;
+    transform: translate(0, -50%);
+    font-size: 14px;
+    color: $main;
+    pointer-events: none;
+}
