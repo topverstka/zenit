@@ -1,0 +1,44 @@
+.pagination {
+    justify-content: center;
+    margin: 55px 0;
+    button {
+        &:hover {
+            path {
+                stroke: $accent;
+            }
+        }
+        svg {
+            width: 10px
+        }
+    }
+}
+
+.pagination__list {
+    margin: 0 50px;
+    li {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        border: 1px solid $main;
+        border-radius: $radius;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &._active {
+            background: $accent;
+            color: #fff;
+            border: 1px solid transparent;
+        }
+        &:hover {
+            background: $accent;
+            color: #fff;
+            border: 1px solid transparent;
+        }
+        &:not(:last-child) {
+            margin-right: 30px
+        }
+    }
+}

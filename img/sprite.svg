@@ -26,14 +26,14 @@
         <path d="M1 11L6 6L1 1" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
      <symbol id="arr-top" viewBox="0 0 14 8">
-        <path d="M13 7L7 1L1 7" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 7L7 1L1 7" stroke="white" stroke-linecap="round" stroke-linejoin="round" style="fill: var(--primary-color)" />
     </symbol>
      <symbol id="arr-menu" viewBox="0 0 11 9">
         <path d="M5.5 9L0 0L11 9.08524e-07L5.5 9Z" fill="#222222"/>
     </symbol>
 
     <symbol id="prev-pagination" viewBox="0 0 12 22">
-        <path d="M11 21L1 11L11 1" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 21L1 11L11 1" class="test11" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
      <symbol id="next-pagination" viewBox="0 0 12 22">

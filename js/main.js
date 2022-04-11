@@ -313,7 +313,9 @@ function pageX(elem) {
 
 
 if (document.querySelector('.section_maps__maps')) {
-    document.querySelector('.section_maps__maps').addEventListener('mouseover', function(e) {
+    let secionMap = document.querySelector('.section_maps__maps');
+    let secionMapMouse = document.querySelector('.section_maps__maps-mouse');
+    secionMap.addEventListener('mouseover', function(e) {
         if (e.target.tagName === 'path') {
             let leftContainer = document.querySelector('#interactive-maps').getBoundingClientRect().left + 35;
             let topContainer = document.querySelector('#interactive-maps').getBoundingClientRect().top + 30;
@@ -323,18 +325,16 @@ if (document.querySelector('.section_maps__maps')) {
             let left = (e.target.getBoundingClientRect().left - leftContainer) + (widthElement / 2);
             let addCoordX = e.target.getAttribute('data-add-coordx') ? e.target.getAttribute('data-add-coordx') : 0;
 
-            document.querySelector('.section_maps__maps-mouse').style.cssText = `
-        top: ${parseInt(top)}px;
-        left: ${parseInt(left) + parseInt(addCoordX)}px
-    `;
+            secionMapMouse.style.cssText = `
+                top: ${parseInt(top)}px;
+                left: ${parseInt(left) + parseInt(addCoordX)}px
+            `;
 
-            console.log(addCoordX)
-            document.querySelector('.section_maps__maps-mouse').innerText = e.target.dataset.region
+            secionMapMouse.innerText = e.target.dataset.region
         } else {
-            document.querySelector('.section_maps__maps-mouse').style = null;
-            document.querySelector('.section_maps__maps-mouse').innerText = '';
+            secionMapMouse.style = null;
+            secionMapMouse.innerText = '';
         }
-        console.log(e.target.offsetLeft)
     });
 }
 
@@ -376,22 +376,28 @@ document.querySelector('.footer_scroll_top').addEventListener('click', function(
 });
 
 function showMenu(target) {
+    let flage = false;
     let heightElement = document.querySelector(target).scrollHeight;
     document.querySelectorAll('.dropdown').forEach(i => {
         i.addEventListener('click', () => {
-            document.querySelectorAll(target).forEach(el => {
-                el.classList.remove('_show');
-                el.style = null;
-            });
+
+
+
 
             if (!i.querySelector(target).style.height) {
+                document.querySelectorAll(target).forEach(el => {
+                    el.classList.remove('_show');
+                    el.style = null;
+                });
                 i.querySelector(target).style.height = heightElement + 'px';
                 i.querySelector(target).classList.add('_show');
 
             } else {
                 i.querySelector(target).style.height = null;
                 i.querySelector(target).classList.remove('_show');
+
             }
+
         });
     });
 }

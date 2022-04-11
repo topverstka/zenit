@@ -70,13 +70,14 @@ body {
 @import './components/_buttons';
 @import './components/_forms';
 @import './components/_modal';
-// Текстовые компоненты
-@import './components/text/_text';
-@import './components/text/_titles';
+@import './components/_pagination';
 @import './components/_breadcrumbs';
 @import './components/_right-catalog';
 @import './components/_consultant_block';
 @import './components/_form-page';
+// Текстовые компоненты
+@import './components/text/_text';
+@import './components/text/_titles';
 // Секции
 @import './sections/_header';
 @import './sections/_footer';
