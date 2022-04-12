@@ -43,7 +43,7 @@ header {
         flex-direction: column-reverse;
         background: #fff;
         display: flex;
-        width: 200px;
+        width: 230px;
         padding-left: 8px;
         opacity: 0;
         z-index: -1;
@@ -73,7 +73,7 @@ header {
             padding: 4px 8px 4px 0;
             flex-direction: column;
             align-items: flex-start;
-            font-size: 12px;
+            font-size: 13px;
             line-height: 16px;
             &:not(:last-child) {
                 border-bottom: 1px solid rgba(34, 34, 34, 0.1);
@@ -93,7 +93,7 @@ header {
                 &>a,
                 &>p {
                     flex-direction: row;
-                    font-size: 10px;
+                    font-size: 12px;
                     align-items: center;
                 }
             }
@@ -118,7 +118,7 @@ header {
             }
         }
         .header-all__top .header-all__top-box .header-all__top-text {
-            font-size: 8px;
+            font-size: 12px;
             margin-bottom: 8px;
         }
         .header-all__top-phone {
@@ -410,7 +410,7 @@ header {
             z-index: 9
         }
         li.header-all__bottom__list-children-li {
-            font-size: 10px;
+            font-size: 12px;
             line-height: 16px;
             padding: 4px 0 4px 0;
             border-bottom: 0;

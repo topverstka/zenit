@@ -7,7 +7,7 @@
     padding: 20px 0;
     @media (max-width: 1300px) {
         .footer_logo {
-            margin-right: 27px
+            margin-right: 0
         }
         .footer_menu {
             margin: 0 auto;
@@ -37,10 +37,10 @@
             width: 70px
         }
         .footer_phone {
-            font-size: 10px;
+            font-size: 12px;
             line-height: 16px;
-            margin-left: 31px;
-            margin-right: 31px;
+            margin-left: auto;
+            margin-right: auto;
             margin-top: 12px;
         }
         .footer_btn.btn {
@@ -63,7 +63,7 @@
     @media (max-width:$tablet) {
         .footer_menu {
             li {
-                font-size: 10px;
+                font-size: 12px;
             }
         }
         .footer_phone {
@@ -82,8 +82,8 @@
             display: block;
             column-gap: 0;
             margin: 0;
-            padding-right: 27px;
-            width: 68%;
+            padding-right: 63px;
+            width: 73%;
             li {
                 margin-right: 0;
                 width: max-content
@@ -91,6 +91,9 @@
         }
         .footer_scroll_top {
             margin-left: 0
+        }
+        .container {
+            justify-content: space-between;
         }
     }
 }
@@ -172,7 +175,7 @@
         }
         a,
         p {
-            font-size: 10px
+            font-size: 12px
         }
     }
 }
