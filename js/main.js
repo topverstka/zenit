@@ -174,6 +174,41 @@ const swiper = new Swiper('.swiper-container', {
     //   },
 });
 
+
+const swiperNewsDetail = new Swiper('.detail-news-page__slider .swiper', {
+
+    slidesPerView: 3, // Кол-во показываемых слайдов
+    spaceBetween: 30, // Расстояние между слайдами
+    loop: true, // Бесконечный слайдер
+    // centeredSlides: true, // Размещать слайдеры по центру
+
+
+    autoplay: { // автопрокрутка
+        delay: 5000, // задержка
+    },
+
+    breakpoints: {
+        1200: {
+
+        },
+        700: {
+
+        },
+        400: {
+
+        }
+    },
+
+    navigation: {
+        nextEl: '.detail-news-page__slider .swiper__arrow-next',
+        prevEl: '.detail-news-page__slider .swiper__arrow-prev',
+    },
+
+    //   scrollbar: {
+    //     el: '.swiper-scrollbar',
+    //   },
+});
+
 // Функции для модальных окон
 modal()
 
@@ -381,9 +416,6 @@ function showMenu(target) {
     document.querySelectorAll('.dropdown').forEach(i => {
         i.addEventListener('click', () => {
 
-
-
-
             if (!i.querySelector(target).style.height) {
                 document.querySelectorAll(target).forEach(el => {
                     el.classList.remove('_show');
@@ -407,3 +439,7 @@ showMenu('.header-all__bottom__list-children');
 if (window.matchMedia('(max-width: 992px)').matches) {
     document.querySelector('header').classList.add('mobile-grid');
 }
+
+lightGallery(document.querySelector('.swiper-wrapper'), {
+    thumbnail: true,
+});

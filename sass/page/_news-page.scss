@@ -42,3 +42,89 @@
         }
     }
 }
+
+.detail-news-page__slider-flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    &>div {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #222222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover {
+            background: $accent;
+            border: 1px solid transparent;
+            svg path {
+                stroke: #fff
+            }
+        }
+        svg {
+            width: 10px;
+            height: 20px
+        }
+    }
+    .swiper__arrow-next {
+        margin-left: 30px
+    }
+}
+
+.detail-news-page__slider {
+    margin-top: 21px;
+    .swiper {
+        overflow: hidden;
+        img {
+            border-radius: $radius;
+        }
+    }
+}
+
+.detail-news-page__footer-social {
+    margin-left: auto;
+    svg {
+        height: 20px;
+    }
+}
+
+.detail-news-page__footer {
+    margin-bottom: 50px;
+}
+
+.detail-news-page__footer-social-link {
+    margin-left: 20px
+}
+
+.detail-news-page__footer-social-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+// .lg-outer {
+//     .lg-prev,
+//     .lg-next {
+//         width: 40px;
+//         height: 40px;
+//         border: 1px solid #222222 !important;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         position: relative;
+//     }
+// .lg-prev:after {
+//     content: '' !important;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='22' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 21L11 11L1 1' stroke='#222222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+//     background-size: cover;
+//     width: 10px;
+//     height: 10px;
+// }
+//}
+.lg-backdrop {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
