@@ -7,6 +7,15 @@
             margin-bottom: 6px;
         }
     }
+
+    &__catalog {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__aside {
+        max-width: 308px;
+    }
 }
 
 .content-page__container {

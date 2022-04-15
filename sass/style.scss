@@ -43,7 +43,7 @@ body {
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-    background: $bg-page;
+    background: #fff;
     &._lock {
         overflow: hidden;
     }
@@ -91,6 +91,7 @@ body {
 // Страницы
 @import './page/_company';
 @import './page/_news-page';
+@import './page/_catalog';
 @import './page/partners/_partners';
 // Библиотеки
 //@import './libs/_aos';
