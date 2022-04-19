@@ -54,18 +54,43 @@
                 margin-left: -60px;
                 padding-left: 60px;
                 margin-bottom: 1px;
-                padding-right: 35px;
+                padding-right: 45px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 25px;
+                    transform: translateY(-50%);
+                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='22' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 21L11 11L1 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    width: 12px;
+                    height: 22px;
+                    transition: 300ms;
+                }
     
-                &.active, &:hover {
+                &.active {
                     background: #B92427;
                     color: #FFFFFF;
 
-                    
+                    &::before {
+                        transform: translateY(-50%) rotate(90deg);
+                        filter: invert(100%);
+                    }
+                }
+
+                &:hover {
+                    background: #B92427;
+                    color: #FFFFFF;
+
+                    &::before {
+                        filter: invert(100%);
+                    }
                 }
 
                 &.active {
                     & + ul {
-                        display: block;
+                        visibility: visible;
                     }
                 }
             }
@@ -73,7 +98,9 @@
 
             & > ul {
                 background: #EFEFEF;
-                display: none;
+                height: 0;
+                visibility: hidden;
+                transition: 300ms;
 
                 li > a {
                     font-weight: 400;
@@ -82,6 +109,10 @@
                     color: rgba(34, 34, 34, 0.7);
                     text-transform: initial;
 
+                    &::before {
+                        content: none;
+                    }
+
                     &:hover, &.active{
                         background: #EFEFEF;
                         color: #B92427;
@@ -89,5 +120,97 @@
                 }
             }
         }
+    }
+}
+
+
+.catalog-content {
+    &__text {
+        margin-bottom: 15px;
+        line-height: 1;
+    }
+
+    &__file {
+        margin-bottom: 30px;
+    }
+
+    &__form {
+        margin-top: 22px;
+    }
+
+    &__fields {
+        display: flex;
+        max-width: 420px;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    &__submit {
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 30px;
+
+        p {
+            max-width: 164px;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(34, 34, 34, 0.5);
+            margin-top: 11px;
+
+            a {
+                color: #DC9293;
+            }
+        }
+    }
+}
+
+.field-file {
+    position: relative;
+    display: flex;
+    max-width: 420px;
+    user-select: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 19px 0 15px 0;
+    border: 1px dashed rgba(34, 34, 34, 0.7);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 1px;
+    min-height: 170px;
+
+    input[type="file"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    svg {
+        width: 46px;
+        margin-bottom: 8px;
+    }
+
+    span {
+        max-width: 240px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 167%;
+        text-align: center;
+        color: rgba(34, 34, 34, 0.7);
+        margin-bottom: 7px;
+    }
+
+    small {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 167%;
+        text-align: center;
+        color: rgba(34, 34, 34, 0.7);
     }
 }
