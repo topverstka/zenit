@@ -3255,7 +3255,7 @@ header.mobile-grid .header_mobile {
 
 .reviews-page__list li {
   padding: 13px 20px 15px;
-  width: 48%;
+  width: 48.7%;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   border-radius: 1px;
@@ -3277,6 +3277,14 @@ header.mobile-grid .header_mobile {
 .reviews-page__text {
   font-size: 12px;
   line-height: 20px;
+}
+
+.reviews-page .pagination {
+  display: none;
+}
+
+.reviews-page .pagination.active {
+  display: block;
 }
 
 @font-face {
