@@ -1,0 +1,43 @@
+.block_choose {
+    margin-top: 19px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 1px;
+    padding: 13px 26px 20px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.block_choose__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 111%;
+    color: #222222;
+    margin-bottom: 17px;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+    }
+}
+
+.block_choose__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+        max-width: 225px;
+        width: 100%;
+    }
+}
+
+.block_choose__submit {
+    margin-top: 20px;
+
+    @media (max-width: $tablet) {
+        max-width: 225px;
+        width: 100%;
+    }
+}

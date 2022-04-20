@@ -474,7 +474,7 @@ if (reviewsItems && pagination) {
 const catalogNavBtn = find('.catalog-nav-btn')
 const catalogNav = find('.catalog-nav')
 
-catalogNavBtn.addEventListener('click', (e) => {
+catalogNavBtn && catalogNav && catalogNavBtn.addEventListener('click', (e) => {
     e.preventDefault()
     catalogNav.classList.toggle('active')
     catalogNavBtn.innerText = catalogNav.classList.contains('active')?"Закрыть каталог":"Открыть каталог"
@@ -515,5 +515,67 @@ for (const item of catalogNavItems) {
             e.preventDefault()
             return
         }
+    })
+}
+
+
+
+// TABS
+
+const tabsLinks = findAll('.tab-link')
+const tabsItems = findAll('.tab')
+
+tabsLinks.forEach(tabLink => {
+    tabLink.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const id = tabLink.getAttribute('href')
+        const el = find(id)
+
+        tabsItems.forEach(item => {
+            item.classList.remove('tab--active')
+        })
+
+        tabsLinks.forEach(item => {
+            item.classList.remove('tab-link--active')
+        })
+
+        if(el) {
+            tabLink.classList.add('tab-link--active')
+            el.classList.add('tab--active')
+        }
+    })
+})
+
+
+const swiperCatalogDetail = new Swiper('.catalog-detail-slider .swiper', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 5000,
+    },
+    navigation: {
+        nextEl: '.catalog-detail-slider__arrows .swiper__arrow-next',
+        prevEl: '.catalog-detail-slider__arrows .swiper__arrow-prev',
+    },
+});
+
+
+const catalogGDetailItems = findAll('.catalog-detail-slider__item')
+const catalogGDetailPhoto = find('.catalog-detail__photo')
+
+if(catalogGDetailPhoto && catalogGDetailItems.length > 0) {
+    catalogGDetailItems.forEach(item => {
+        item.addEventListener('click', () => {
+
+            catalogGDetailItems.forEach(_item => {
+                _item.classList.remove('catalog-detail-slider__item--active')
+            })
+
+
+            const src = item.getAttribute('src')
+            item.classList.add('catalog-detail-slider__item--active')
+            catalogGDetailPhoto.setAttribute('src', src)
+        })
     })
 }
