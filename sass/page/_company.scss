@@ -11,11 +11,27 @@
     &__catalog {
         display: flex;
         gap: 30px;
+
+        @media (max-width: $laptop-m) {
+            flex-direction: column-reverse;
+
+            .block_catalog {
+                display: none;
+            }
+        }
     }
 
     &__aside {
         max-width: 308px;
         padding-bottom: 50px;
+        @media (max-width: $laptop-m) {
+            max-width: 100%;
+            padding-bottom: 0;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
     }
 }
 

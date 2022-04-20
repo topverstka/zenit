@@ -3,46 +3,6 @@ const d = document;
 const body = document.querySelector('body');
 
 
-const catalogNavItems = findAll('.catalog-nav a') 
-for (const item of catalogNavItems) {
-
-
-    function openSubmenu(submenu, active = true) {
-        if(submenu) {
-                
-            if(active) {
-                submenu.style.height = submenu.scrollHeight + "px"
-            } else {
-                submenu.style.height = 0;
-            }
-        }
-    }
-
-
-    if(item.classList.contains('active')) {
-        const submenu = item.parentElement.querySelector('ul')
-        openSubmenu(submenu)
-    }
-
-    item.addEventListener('click', (e) => {
-        const target = e.currentTarget
-        const targetLink = target.getAttribute('href')
-        
-        if(targetLink === "#") {
-            
-            target.classList.toggle('active')
-            const submenu = target.parentElement.querySelector('ul')
-
-            openSubmenu(submenu, target.classList.contains('active'))
-
-            e.preventDefault()
-            return
-        }
-    })
-}
-
-
-
 // Служебные функции
 
 function find(selector) {
@@ -499,4 +459,61 @@ if (reviewsItems && pagination) {
     if (window.matchMedia('(max-width: 768px)').matches) {
         pagination.classList.add('show');
     }
+}
+
+
+
+
+
+
+
+
+
+
+// Catalog
+const catalogNavBtn = find('.catalog-nav-btn')
+const catalogNav = find('.catalog-nav')
+
+catalogNavBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    catalogNav.classList.toggle('active')
+    catalogNavBtn.innerText = catalogNav.classList.contains('active')?"Закрыть каталог":"Открыть каталог"
+})
+
+const catalogNavItems = findAll('.catalog-nav a') 
+for (const item of catalogNavItems) {
+
+
+    function openSubmenu(submenu, active = true) {
+        if(submenu) {
+                
+            if(active) {
+                submenu.style.height = submenu.scrollHeight + "px"
+            } else {
+                submenu.style.height = 0;
+            }
+        }
+    }
+
+
+    if(item.classList.contains('active')) {
+        const submenu = item.parentElement.querySelector('ul')
+        openSubmenu(submenu)
+    }
+
+    item.addEventListener('click', (e) => {
+        const target = e.currentTarget
+        const targetLink = target.getAttribute('href')
+        
+        if(targetLink === "#") {
+            
+            target.classList.toggle('active')
+            const submenu = target.parentElement.querySelector('ul')
+
+            openSubmenu(submenu, target.classList.contains('active'))
+
+            e.preventDefault()
+            return
+        }
+    })
 }
