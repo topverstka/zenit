@@ -1,0 +1,40 @@
+.reviews-page {
+  padding-bottom: 60px;
+}
+
+.reviews-page h1 {
+  margin-bottom: 35px;
+}
+
+.reviews-page__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  margin-bottom: 50px;
+
+  li {
+    padding: 13px 20px 15px;
+    width: 48%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 1px;
+  }
+}
+
+.reviews-page__title {
+  margin-bottom: 2px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.reviews-page__info {
+  margin-bottom: 21px;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.reviews-page__text {
+  font-size: 12px;
+  line-height: 20px;
+}
