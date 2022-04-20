@@ -1,16 +1,33 @@
 .reviews-page {
   padding-bottom: 60px;
+
+  @media (max-width: $mobile-l) {
+    padding-bottom: 32px;
+  }
 }
 
 .reviews-page h1 {
   margin-bottom: 35px;
+
+  @media (max-width: $mobile-l) {
+    margin-bottom: 10px;
+  }
 }
 
 .reviews-page__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 32px;
+  justify-content: space-between;
+  row-gap: 20px;
   margin-bottom: 50px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $mobile-l) {
+    row-gap: 14px;
+  }
 
   li {
     padding: 13px 20px 15px;
@@ -18,6 +35,23 @@
     background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     border-radius: 1px;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
+      display: block;
+    }
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      display: none;
+    }
+
+    @media (max-width: $mobile-l) {
+      padding: 11px 10px 12px;
+    }
   }
 }
 
@@ -26,23 +60,47 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
+
+  @media (max-width: $mobile-l) {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
 .reviews-page__info {
   margin-bottom: 21px;
   font-size: 14px;
   line-height: 19px;
+
+  @media (max-width: $mobile-l) {
+    margin-bottom: 8px;
+    font-size: 10px;
+    line-height: 16px;
+  }
 }
 
 .reviews-page__text {
   font-size: 12px;
   line-height: 20px;
+
+  @media (max-width: $mobile-l) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.reviews-page__btn {
+  @media (max-width: $mobile-l) {
+    padding: 5px 28px 5px 25px;
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 .reviews-page .pagination {
   display: none;
 }
 
-.reviews-page .pagination.active {
-  display: block;
+.reviews-page .pagination.show {
+  display: flex;
 }

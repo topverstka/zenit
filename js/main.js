@@ -481,6 +481,22 @@ if (window.matchMedia('(max-width: 992px)').matches) {
     document.querySelector('header').classList.add('mobile-grid');
 }
 
-lightGallery(document.querySelector('.swiper-wrapper'), {
-    thumbnail: true,
-});
+// lightGallery(document.querySelector('.swiper-wrapper'), {
+//     thumbnail: true,
+// });
+
+// Скрипт для страницы Отзывы на отображение/скрытие пагинации, если элементов больше 10
+const reviewsItems = document.querySelectorAll('.reviews-page__list li');
+const pagination = document.querySelector('.pagination');
+
+if (reviewsItems && pagination) {
+    if (window.matchMedia('(min-width: 769px)').matches) {
+        if (reviewsItems.length > 10) {
+            pagination.classList.add('show');
+        };
+    }
+
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        pagination.classList.add('show');
+    }
+}
