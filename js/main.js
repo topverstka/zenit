@@ -462,7 +462,7 @@ if (window.matchMedia('(max-width: 992px)').matches) {
 }
 
 if (typeof(lightGallery) === 'function') {
-    lightGallery(document.querySelector('.swiper-wrapper'), {
+    lightGallery(document.querySelector('.detail-news-page__wrapper'), {
         thumbnail: true,
     });
 }
