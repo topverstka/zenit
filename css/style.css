@@ -3751,6 +3751,11 @@ header.mobile-grid .header_mobile {
   transition: 300ms;
   user-select: none;
   margin-bottom: 20px;
+  display: none;
+}
+
+.catalog-detail__photo--active {
+  display: block;
 }
 
 .catalog-detail__back {

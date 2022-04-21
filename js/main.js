@@ -583,12 +583,23 @@ const swiperCatalogDetail = new Swiper('.catalog-detail-slider .swiper', {
 });
 
 
+
 const catalogGDetailItems = findAll('.catalog-detail-slider__item')
-const catalogGDetailPhoto = find('.catalog-detail__photo')
+const catalogGDetailPhotoContainer = find('.catalog-detail-main')
 
+if (catalogGDetailItems.length > 0) {
+    
+    catalogGDetailItems.forEach((item, i) => {
+        const src = item.getAttribute('src')
 
-if (catalogGDetailPhoto && catalogGDetailItems.length > 0) {
-    catalogGDetailItems.forEach(item => {
+        var a = document.createElement("a");
+        a.setAttribute('href', src)
+        a.classList.add('catalog-detail__photo')
+        a.innerHTML = `<img src="${src}" alt="">`
+
+        if(i === 0 ) a.classList.add('catalog-detail__photo--active')
+        catalogGDetailPhotoContainer.appendChild(a);
+
         item.addEventListener('click', (e) => {
             e.preventDefault()
             e.stopPropagation()
@@ -598,20 +609,23 @@ if (catalogGDetailPhoto && catalogGDetailItems.length > 0) {
             })
 
 
-            const photo = catalogGDetailPhoto.querySelector('img')
-            const src = item.getAttribute('src')
+            const itemsMainphotos = findAll('.catalog-detail__photo')
+            itemsMainphotos.forEach(_item => {
+                _item.classList.remove('catalog-detail__photo--active')
+            })
+            itemsMainphotos[i].classList.add('catalog-detail__photo--active')
 
             item.classList.add('catalog-detail-slider__item--active')
-            photo.setAttribute('src', src)
-            catalogGDetailPhoto.setAttribute('href', src)
         })
     })
-}
 
-if (typeof(lightGallery) === 'function') {
-    lightGallery(document.querySelector('.catalog-detail-main'), {
-        thumbnail: true,
-    });
+
+    if (typeof(lightGallery) === 'function') {
+        lightGallery(document.querySelector('.catalog-detail-main'), {
+            thumbnail: true,
+        });
+    }
+
 }
 
 // File loader

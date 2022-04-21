@@ -446,6 +446,11 @@
         transition: 300ms;
         user-select: none;
         margin-bottom: 20px;
+        display: none;
+
+        &--active {
+            display: block;
+        }
     }
 
     &__back {
