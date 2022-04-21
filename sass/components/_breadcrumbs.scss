@@ -1,5 +1,8 @@
 .breadcrumbs {
-    margin: 17px 0 24px 0
+    margin: 17px 0 24px 0;
+    @media (max-width: $mobile-l) {
+        margin: 12px 0 4px 0
+    }
 }
 
 .breadcrumbs-list {
@@ -10,12 +13,17 @@
         font-size: 13px;
         line-height: 16px;
         color: rgba(34, 34, 34, 0.3);
-        &:not(:last-child):after {
-            content: "/";
+        &:not(:last-child) {
+            margin-right: 3px;
+            &:after {
+                content: "/";
+            }
         }
         &:last-child {
             color: $main;
-            margin-left: 3px
+        }
+        @media (max-width: $mobile-l) {
+            font-size: 12px
         }
     }
 }

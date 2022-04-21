@@ -40,29 +40,57 @@ function bodyLock(con) {
     }
 }
 
+
+// function validationForm() {
+//     const name = find('#user_name')
+//     const phone = find('#user_phone')
+//     const email = find('#user_email')
+
+//     let con = true
+
+//     for (let i = 0; i < [name, phone, email].length; i++) {
+//         const elem = [name, phone, email][i];
+//         const elemValue = elem.value.trim()
+
+//         if (elemValue === '') {
+//             elem.classList.add('_error')
+//             con = false
+//         } else {
+//             elem.classList.remove('_error')
+//             con = true
+//         }
+//     }
+
+//     return con
+// }
+
+
 // Валидация формы
-function validationForm() {
-    const name = find('#user_name')
-    const phone = find('#user_phone')
-    const email = find('#user_email')
+function validationForm(event) {
+    let submit = document.querySelectorAll('[data-submit]');
 
-    let con = true
 
-    for (let i = 0; i < [name, phone, email].length; i++) {
-        const elem = [name, phone, email][i];
-        const elemValue = elem.value.trim()
-
-        if (elemValue === '') {
-            elem.classList.add('_error')
-            con = false
-        } else {
-            elem.classList.remove('_error')
-            con = true
-        }
-    }
-
-    return con
+    submit.forEach(i => {
+        i.closest('form').querySelectorAll('.validation-input').forEach(el => {
+            if (el.value.trim() === '') {
+                event.preventDefault();
+                el.placeholder = 'Необходимо заполнить';
+                el.classList.add('_error');
+            } else {
+                event.preventDefault(); // Временно
+                el.classList.remove('_error');
+                el.placeholder = el.dataset.placeholder;
+            }
+        });
+    });
 }
+
+window.addEventListener('submit', function(e) {
+    console.log(e.target)
+    if (e.target.querySelector('[data-submit]')) {
+        validationForm(e);
+    }
+});
 
 // Отправка формы
 sumbitForm()
@@ -178,8 +206,8 @@ const swiper = new Swiper('.swiper-container', {
 
 const swiperNewsDetail = new Swiper('.detail-news-page__slider .swiper', {
 
-    slidesPerView: 3, // Кол-во показываемых слайдов
-    spaceBetween: 30, // Расстояние между слайдами
+    slidesPerView: 2, // Кол-во показываемых слайдов
+    spaceBetween: 8, // Расстояние между слайдами
     loop: true, // Бесконечный слайдер
     // centeredSlides: true, // Размещать слайдеры по центру
 
@@ -190,10 +218,12 @@ const swiperNewsDetail = new Swiper('.detail-news-page__slider .swiper', {
 
     breakpoints: {
         1200: {
-
+            slidesPerView: 3,
+            spaceBetween: 30
         },
         700: {
-
+            slidesPerView: 3,
+            spaceBetween: 30
         },
         400: {
 
@@ -205,9 +235,6 @@ const swiperNewsDetail = new Swiper('.detail-news-page__slider .swiper', {
         prevEl: '.detail-news-page__slider .swiper__arrow-prev',
     },
 
-    //   scrollbar: {
-    //     el: '.swiper-scrollbar',
-    //   },
 });
 
 // Функции для модальных окон
@@ -321,31 +348,11 @@ function modal() {
     }
 }
 
-function getOffset(el) {
-    el = el.getBoundingClientRect();
-    return {
-        left: el.left + window.scrollX,
-        top: el.top + window.scrollY
-    }
-}
-
-Object.defineProperty(Element.prototype, 'documentOffsetTop', {
-    get: function() {
-        return this.offsetTop + (this.offsetParent ? this.offsetParent.documentOffsetTop : 0);
-    }
-});
-
-Object.defineProperty(Element.prototype, 'documentOffsetLeft', {
-    get: function() {
-        return this.offsetLeft + (this.offsetParent ? this.offsetParent.documentOffsetLeft : 0);
-    }
-});
-
-function pageX(elem) {
-    return elem.offsetParent ?
-        elem.offsetLeft + pageX(elem.offsetParent) :
-        elem.offsetLeft;
-}
+// Object.defineProperty(Element.prototype, 'documentOffsetTop', {
+//     get: function() {
+//         return this.offsetTop + (this.offsetParent ? this.offsetParent.documentOffsetTop : 0);
+//     }
+// });
 
 
 if (document.querySelector('.section_maps__maps')) {
@@ -384,6 +391,19 @@ if (document.querySelector('.section_maps__maps')) {
 
 document.querySelector('.header-all__bottom__search .search-input').addEventListener('click', function(e) {
     this.closest('.header-all__bottom__search').classList.add('_active')
+});
+
+document.addEventListener('input', function(e) {
+    if (e.target.getAttribute('type') === 'tel') {
+        e.target.value = e.target.value.replace(/[A-Za-zА-Яа-яЁё]/, '')
+    }
+});
+
+
+document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('header-all__bottom__search') && !e.target.closest('.header-all__bottom__search')) {
+        deleteViewEsc(document.querySelector('.header-all__bottom__search'));
+    }
 });
 
 function deleteViewEsc(target) {
@@ -441,9 +461,11 @@ if (window.matchMedia('(max-width: 992px)').matches) {
     document.querySelector('header').classList.add('mobile-grid');
 }
 
-// lightGallery(document.querySelector('.swiper-wrapper'), {
-//     thumbnail: true,
-// });
+if (lightGallery) {
+    lightGallery(document.querySelector('.swiper-wrapper'), {
+        thumbnail: true,
+    });
+}
 
 // Скрипт для страницы Отзывы на отображение/скрытие пагинации, если элементов больше 10
 const reviewsItems = document.querySelectorAll('.reviews-page__list li');
@@ -477,17 +499,17 @@ const catalogNav = find('.catalog-nav')
 catalogNavBtn && catalogNav && catalogNavBtn.addEventListener('click', (e) => {
     e.preventDefault()
     catalogNav.classList.toggle('active')
-    catalogNavBtn.innerText = catalogNav.classList.contains('active')?"Закрыть каталог":"Открыть каталог"
+    catalogNavBtn.innerText = catalogNav.classList.contains('active') ? "Закрыть каталог" : "Открыть каталог"
 })
 
-const catalogNavItems = findAll('.catalog-nav a') 
+const catalogNavItems = findAll('.catalog-nav a')
 for (const item of catalogNavItems) {
 
 
     function openSubmenu(submenu, active = true) {
-        if(submenu) {
-                
-            if(active) {
+        if (submenu) {
+
+            if (active) {
                 submenu.style.height = submenu.scrollHeight + "px"
             } else {
                 submenu.style.height = 0;
@@ -496,7 +518,7 @@ for (const item of catalogNavItems) {
     }
 
 
-    if(item.classList.contains('active')) {
+    if (item.classList.contains('active')) {
         const submenu = item.parentElement.querySelector('ul')
         openSubmenu(submenu)
     }
@@ -504,9 +526,9 @@ for (const item of catalogNavItems) {
     item.addEventListener('click', (e) => {
         const target = e.currentTarget
         const targetLink = target.getAttribute('href')
-        
-        if(targetLink === "#") {
-            
+
+        if (targetLink === "#") {
+
             target.classList.toggle('active')
             const submenu = target.parentElement.querySelector('ul')
 
@@ -540,7 +562,7 @@ tabsLinks.forEach(tabLink => {
             item.classList.remove('tab-link--active')
         })
 
-        if(el) {
+        if (el) {
             tabLink.classList.add('tab-link--active')
             el.classList.add('tab--active')
         }
@@ -564,7 +586,7 @@ const swiperCatalogDetail = new Swiper('.catalog-detail-slider .swiper', {
 const catalogGDetailItems = findAll('.catalog-detail-slider__item')
 const catalogGDetailPhoto = find('.catalog-detail__photo')
 
-if(catalogGDetailPhoto && catalogGDetailItems.length > 0) {
+if (catalogGDetailPhoto && catalogGDetailItems.length > 0) {
     catalogGDetailItems.forEach(item => {
         item.addEventListener('click', () => {
 
@@ -579,3 +601,35 @@ if(catalogGDetailPhoto && catalogGDetailItems.length > 0) {
         })
     })
 }
+
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('vakansion-page_accordion__header') || e.target.closest('.vakansion-page_accordion__header')) {
+
+
+        let parentElement = e.target.closest('.vakansion-page_accordion');
+        let bodyElement = parentElement.querySelector('.vakansion-page_accordion__body');
+
+        if (!bodyElement.style.height) {
+            findAll('.vakansion-page_accordion__body').forEach(i => {
+                i.style = null;
+                i.classList.remove('_show');
+                // find('.vakansion-page_accordion__body._show-padding') ? setTimeout(() => find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding'), 200) : '';
+                i.closest('.vakansion-page_accordion').classList.remove('_show');
+            });
+            bodyElement.style.height = bodyElement.scrollHeight + 'px';
+            bodyElement.classList.add('_show-padding');
+            bodyElement.classList.add('_show');
+            bodyElement.closest('.vakansion-page_accordion').classList.add('_show');
+
+        } else {
+            bodyElement.style = null;
+            bodyElement.classList.remove('_show');
+            bodyElement.closest('.vakansion-page_accordion').classList.remove('_show');
+            setTimeout(() => {
+                bodyElement.classList.remove('_show-padding');
+                find('.vakansion-page_accordion__body._show-padding') ? find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding') : '';
+            }, 200);
+            // setTimeout(() => find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding'), 200);
+        }
+    }
+})

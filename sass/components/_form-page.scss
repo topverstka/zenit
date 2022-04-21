@@ -4,6 +4,17 @@
     padding: 20px 20px 30px;
     width: 645px;
     margin-bottom: 50px;
+    max-width: 100%;
+    .form-page__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 20px;
+        margin-bottom: 19px;
+    }
+    @media (max-width: 600px) {
+        padding: 16px 15px;
+        margin-bottom: 32px;
+    }
 }
 
 .form-page__forms {
@@ -41,6 +52,22 @@
         padding: 7px 20px 8px;
         width: max-content;
     }
+    @media (max-width:600px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 16px;
+        textarea {
+            grid-column: auto;
+            height: 160px
+        }
+        input[type=text] {
+            height: 32px;
+        }
+        input[type=submit] {
+            font-size: 16px;
+            line-height: 22px;
+            padding: 5px 25px
+        }
+    }
 }
 
 .content-page__text .form-page__title {
@@ -49,4 +76,10 @@
     line-height: 30px;
     margin-bottom: 44px;
     margin-top: -7px;
+    @media (max-width: 600px) {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 13px;
+        margin-top: 8px
+    }
 }

@@ -1,0 +1,176 @@
+.vakansion-page_accordion {
+    position: relative;
+    &._show {
+        .vakansion-page_accordion__header-btn svg {
+            transform: rotate(90deg)
+        }
+    }
+}
+
+.vakansion-page {
+    @media (max-width: 480px) {
+        .form-page__title {
+            font-size: 22px;
+            margin-bottom: 17px;
+        }
+    }
+}
+
+.vakansion-page_accordion__body {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height $tr ease, opacity .2s linear;
+    background: $bg-block;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15%);
+    border-radius: $radius;
+    margin-top: 10px;
+    padding: 33px 20px 30px 20px;
+    position: absolute;
+    &._show {
+        opacity: 1;
+        position: static;
+    }
+    &._show-padding {
+        position: static;
+    }
+    .vakansion-click {
+        margin-left: 20px
+    }
+    @media (max-width: 480px) {
+        padding: 11px 0 16px 10px;
+        .vakansion-click {
+            padding: 5px 25px;
+            margin-left: 0;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+}
+
+.vakansion-page_accordion__body-line {
+    margin-bottom: 31px;
+    @media (max-width: 480px) {
+        margin-bottom: 7px;
+    }
+}
+
+.vakansion-page_accordion__body-line-city {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    margin-right: 30px;
+    @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.vakansion-page_accordion__body-box-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 1px;
+}
+
+.vakansion-page_accordion__body-box-list {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    @media (max-width: 480px) {
+        line-height: 16px;
+        margin-bottom: 7px;
+    }
+}
+
+.vakansion-page_accordion__body-line-job {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    @media (max-width: 480px) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.vakansion-page__container {
+    margin: 45px 0 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 30px;
+    @media (max-width: $laptop-m) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 16px 0;
+    }
+    @media (max-width: 480px) {
+        margin: 12px 0 16px 0
+    }
+}
+
+.vakansion-page_accordion__header {
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: $radius;
+    padding: 15px 20px;
+    cursor: pointer;
+    @media (max-width: 480px) {
+        padding: 8px 10px
+    }
+}
+
+.vakansion-page_accordion__header-city {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    @media (max-width: 480px) {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.vakansion-page_accordion__header-job {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    @media (max-width: 480px) {
+        font-size: 12px;
+        line-height: 16px;
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+
+.vakansion-page_accordion__header-btn {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $main;
+    svg {
+        transition: $tr;
+        width: 7px;
+        margin-left: 10px
+    }
+    @media (max-width: 480px) {
+        color: transparent;
+        position: absolute;
+        right: 10px
+    }
+}
+
+.vakansion-page__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    width: 983px;
+    margin-top: 30px;
+    max-width: 100%;
+    @media (max-width: 480px) {
+        font-size: 12px;
+        margin-top: 6px;
+        line-height: 16px;
+    }
+}

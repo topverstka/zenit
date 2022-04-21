@@ -219,8 +219,7 @@ header {
     border-bottom: 0.5px solid rgba(34, 34, 34, 0.3);
     padding-bottom: 16px;
     margin-top: 5px;
-    a:not(.header-all__top-phone):hover,
-    p:not(.header-all__top-adress):hover {
+    a:not(.header-all__top-phone):not(.header-all__top-adress):hover {
         color: $accent;
         svg path {
             stroke: $accent;

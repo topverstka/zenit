@@ -127,3 +127,12 @@ input[type=submit] {
     color: $main;
     pointer-events: none;
 }
+
+.validation-input {
+    &._error {
+        border: 1px solid $accent !important;
+        &::placeholder {
+            color: $accent !important
+        }
+    }
+}

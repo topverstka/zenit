@@ -27,6 +27,8 @@
     &:hover {
         a {
             text-decoration-line: underline;
+            text-underline-offset: 1px;
+            text-decoration-thickness: 2px;
             color: $accent
         }
     }
