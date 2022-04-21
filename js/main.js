@@ -586,21 +586,53 @@ const swiperCatalogDetail = new Swiper('.catalog-detail-slider .swiper', {
 const catalogGDetailItems = findAll('.catalog-detail-slider__item')
 const catalogGDetailPhoto = find('.catalog-detail__photo')
 
+
 if (catalogGDetailPhoto && catalogGDetailItems.length > 0) {
     catalogGDetailItems.forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault()
+            e.stopPropagation()
 
             catalogGDetailItems.forEach(_item => {
                 _item.classList.remove('catalog-detail-slider__item--active')
             })
 
 
+            const photo = catalogGDetailPhoto.querySelector('img')
             const src = item.getAttribute('src')
+
             item.classList.add('catalog-detail-slider__item--active')
-            catalogGDetailPhoto.setAttribute('src', src)
+            photo.setAttribute('src', src)
+            catalogGDetailPhoto.setAttribute('href', src)
         })
     })
 }
+
+if (typeof(lightGallery) === 'function') {
+    lightGallery(document.querySelector('.catalog-detail-main'), {
+        thumbnail: true,
+    });
+}
+
+// File loader
+
+const filedsFile = findAll('.field-file')
+filedsFile.forEach(field => {
+    const input = field.querySelector('input[type="file"]')
+    const placeholder = field.querySelector('.field-file__placeholder')
+
+    input && input.addEventListener('change', (e) => {
+        const filename = e.currentTarget.files[0].name
+
+        placeholder.innerText = filename
+    })
+})
+
+
+
+
+
+
 
 window.addEventListener('click', function(e) {
     if (e.target.classList.contains('vakansion-page_accordion__header') || e.target.closest('.vakansion-page_accordion__header')) {

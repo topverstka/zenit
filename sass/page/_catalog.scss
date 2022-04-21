@@ -526,10 +526,11 @@
 }
 
 .catalog-detail-slider {
-    max-width: 210px;
+    max-width: 230px;
     margin: 0 auto;
     position: relative;
     user-select: none;
+    padding: 0 10px;
 
     .swiper {
         overflow: hidden;
@@ -583,6 +584,7 @@
         border-radius: 1px;
         transition: 300ms;
         cursor: pointer;
+        box-sizing: border-box;
 
         &:hover {
             border-color: rgba(34, 34, 34, 0.3);
