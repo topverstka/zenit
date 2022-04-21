@@ -461,7 +461,7 @@ if (window.matchMedia('(max-width: 992px)').matches) {
     document.querySelector('header').classList.add('mobile-grid');
 }
 
-if (lightGallery) {
+if (typeof(lightGallery) === 'function') {
     lightGallery(document.querySelector('.swiper-wrapper'), {
         thumbnail: true,
     });
