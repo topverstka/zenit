@@ -18,6 +18,12 @@
             &:after {
                 content: "/";
             }
+            &:hover {
+                color: $accent;
+                &:after {
+                    color: rgba(34, 34, 34, 0.3);
+                }
+            }
         }
         &:last-child {
             color: $main;

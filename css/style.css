@@ -1226,6 +1226,14 @@ textarea {
   content: "/";
 }
 
+.breadcrumbs-list li:not(:last-child):hover {
+  color: var(--accent);
+}
+
+.breadcrumbs-list li:not(:last-child):hover:after {
+  color: rgba(34, 34, 34, 0.3);
+}
+
 .breadcrumbs-list li:last-child {
   color: var(--main);
 }
