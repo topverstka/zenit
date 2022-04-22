@@ -4004,11 +4004,14 @@ header.mobile-grid .header_mobile {
 }
 
 .tab {
-  display: none;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: 300ms;
 }
 
 .tab--active {
-  display: block;
+  visibility: visible;
 }
 
 @media (max-width: 992px) {

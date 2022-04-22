@@ -676,10 +676,13 @@
 }
 
 .tab {
-    display: none;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: 300ms;
 
     &--active {
-        display: block;
+        visibility: visible;
     }
 }
 

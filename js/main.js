@@ -548,6 +548,12 @@ const tabsLinks = findAll('.tab-link')
 const tabsItems = findAll('.tab')
 
 tabsLinks.forEach(tabLink => {
+
+    tabsItems.forEach(item => {
+        if(item.classList.contains('tab--active'))
+        item.style.height = item.scrollHeight + "px"
+    })
+
     tabLink.addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -556,6 +562,7 @@ tabsLinks.forEach(tabLink => {
 
         tabsItems.forEach(item => {
             item.classList.remove('tab--active')
+            item.style.height = 0
         })
 
         tabsLinks.forEach(item => {
@@ -565,6 +572,8 @@ tabsLinks.forEach(tabLink => {
         if (el) {
             tabLink.classList.add('tab-link--active')
             el.classList.add('tab--active')
+
+            el.style.height = el.scrollHeight + "px"
         }
     })
 })
