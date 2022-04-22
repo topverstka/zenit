@@ -5176,6 +5176,8 @@ header.mobile-grid .header_mobile {
 @media (max-width: 480px) {
   .vakansion-page_accordion__body {
     padding: 11px 0 16px 10px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .vakansion-page_accordion__body .vakansion-click {
     padding: 5px 25px;
