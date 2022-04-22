@@ -41,6 +41,27 @@ function bodyLock(con) {
 }
 
 
+function get_name_browser() {
+
+    let ua = navigator.userAgent;
+
+    if (ua.match(/Opera|OPR\//)) {
+        return 'Opera';
+    } else {
+        if (ua.search(/Chrome/) > 0) return 'Chrome';
+        if (ua.search(/Firefox/) > 0) return 'Firefox';
+        if (ua.search(/Safari/) > 0) return 'Safari';
+        if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+    }
+
+
+    return 'Не определен';
+}
+
+let browser = get_name_browser();
+document.body.classList.add("browser-" + browser);
+
+
 // function validationForm() {
 //     const name = find('#user_name')
 //     const phone = find('#user_phone')
