@@ -1621,6 +1621,12 @@ header.mobile-grid .header_mobile {
   line-height: 22px;
 }
 
+@media (max-width: 1260px) {
+  .header-all__bottom-menu li {
+    font-size: 15px;
+  }
+}
+
 .header-all__bottom-menu li:not(.header-all__bottom__list-children-li):hover {
   color: var(--accent);
 }
@@ -1631,6 +1637,12 @@ header.mobile-grid .header_mobile {
 
 .header-all__bottom-menu li:not(:last-child) {
   margin-right: 30px;
+}
+
+@media (max-width: 1260px) {
+  .header-all__bottom-menu li:not(:last-child) {
+    margin-right: 20px;
+  }
 }
 
 .header-all__bottom-menu li.dropdown {
@@ -1729,6 +1741,12 @@ header.mobile-grid .header_mobile {
 
 .header-all__bottom__search._active {
   width: calc(40% - 40px);
+}
+
+@media (max-width: 1120px) {
+  .header-all__bottom__search._active {
+    width: calc(26%);
+  }
 }
 
 .header-all__bottom__search._active input {
