@@ -1,6 +1,11 @@
 .section_news {
     background: $bg-block;
     padding: 67px 0 70px 0;
+    .section_news__element-link {
+        &:after {
+            bottom: 2px
+        }
+    }
     @media (max-width: $tablet) {
         padding: 40px 0 32px 0
     }
