@@ -582,9 +582,6 @@ tabsLinks.forEach(tabLink => {
 const swiperCatalogDetail = new Swiper('.catalog-detail-slider .swiper', {
     slidesPerView: 3,
     spaceBetween: 30,
-    autoplay: {
-        delay: 5000,
-    },
     navigation: {
         nextEl: '.catalog-detail-slider__arrows .swiper__arrow-next',
         prevEl: '.catalog-detail-slider__arrows .swiper__arrow-prev',
