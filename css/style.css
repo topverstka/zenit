@@ -4278,6 +4278,38 @@ header.mobile-grid .header_mobile {
   display: flex;
 }
 
+.not-found-page h1 {
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  .not-found-page h1 {
+    margin-bottom: 25px;
+  }
+}
+
+.not-found-page h1 span {
+  display: block;
+}
+
+.not-found-page h1 span + span {
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .not-found-page h1 span + span {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .not-found-page__btn {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 5px 29px 6px 25px;
+  }
+}
+
 .vakansion-page_accordion {
   position: relative;
 }

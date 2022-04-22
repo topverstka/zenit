@@ -1,0 +1,29 @@
+.not-found-page {
+  h1 {
+    margin-bottom: 35px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 25px;
+    }
+
+    span {
+      display: block;
+
+      & + span {
+        margin-top: 12px;
+
+        @media (max-width: $tablet) {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+.not-found-page__btn {
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 5px 29px 6px 25px;
+  }
+}
