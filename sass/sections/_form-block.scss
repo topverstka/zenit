@@ -86,7 +86,7 @@
 }
 
 .section_form__form {
-    input[type=text] {
+    input:not([type=submit]) {
         background: transparent;
         margin-right: 30px
     }

@@ -670,34 +670,39 @@ body._lock {
   opacity: 1;
 }
 
-input[type=text] {
+input[type=text],
+input[type=tel] {
   border: 1px solid rgba(34, 34, 34, 0.3);
   border-radius: var(--radius);
   padding: 10px 0 10px 15px;
 }
 
-input[type=text]::-webkit-input-placeholder {
+input[type=text]::-webkit-input-placeholder,
+input[type=tel]::-webkit-input-placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   color: rgba(34, 34, 34, 0.3);
 }
 
-input[type=text]:-ms-input-placeholder {
+input[type=text]:-ms-input-placeholder,
+input[type=tel]:-ms-input-placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   color: rgba(34, 34, 34, 0.3);
 }
 
-input[type=text]::-ms-input-placeholder {
+input[type=text]::-ms-input-placeholder,
+input[type=tel]::-ms-input-placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   color: rgba(34, 34, 34, 0.3);
 }
 
-input[type=text]::placeholder {
+input[type=text]::placeholder,
+input[type=tel]::placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
@@ -2939,7 +2944,7 @@ header.mobile-grid .header_mobile {
   position: relative;
 }
 
-.section_form__form input[type=text] {
+.section_form__form input:not([type=submit]) {
   background: transparent;
   margin-right: 30px;
 }
