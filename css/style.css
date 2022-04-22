@@ -4314,9 +4314,21 @@ header.mobile-grid .header_mobile {
   margin-bottom: 15px;
 }
 
+@media (max-width: 425px) {
+  .search-page h1 {
+    margin-bottom: 10px;
+  }
+}
+
 .search-page__form {
   display: flex;
   margin-bottom: 23px;
+}
+
+@media (max-width: 425px) {
+  .search-page__form {
+    margin-bottom: 12px;
+  }
 }
 
 .search-page__form .search-page__form-input {
@@ -4329,6 +4341,9 @@ header.mobile-grid .header_mobile {
 @media (max-width: 425px) {
   .search-page__form .search-page__form-input {
     padding: 6px 10px;
+    width: 62.3%;
+    font-size: 10px;
+    line-height: 14px;
   }
 }
 
@@ -4337,9 +4352,21 @@ header.mobile-grid .header_mobile {
   font-size: 16px;
 }
 
+@media (max-width: 425px) {
+  .search-page__form .search-page__form-input::-webkit-input-placeholder {
+    font-size: 10px;
+  }
+}
+
 .search-page__form .search-page__form-input::-moz-placeholder {
   color: #222222;
   font-size: 16px;
+}
+
+@media (max-width: 425px) {
+  .search-page__form .search-page__form-input::-moz-placeholder {
+    font-size: 10px;
+  }
 }
 
 .search-page__form-btn {
@@ -4350,7 +4377,9 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 425px) {
   .search-page__form-btn {
-    padding: 6.5px 20px;
+    padding: 8px 25px;
+    font-size: 16px;
+    line-height: 16px;
   }
 }
 
@@ -4363,6 +4392,13 @@ header.mobile-grid .header_mobile {
   line-height: 22px;
 }
 
+@media (max-width: 425px) {
+  .search-page__text {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
 .search-page__text:not(:last-child) {
   margin-bottom: 3px;
 }
@@ -4370,6 +4406,14 @@ header.mobile-grid .header_mobile {
 .search-page__text.result {
   margin-bottom: 18px;
   font-weight: 700;
+}
+
+@media (max-width: 425px) {
+  .search-page__text.result {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 9px;
+  }
 }
 
 .search-page__text .word {
@@ -4385,6 +4429,15 @@ header.mobile-grid .header_mobile {
   border-bottom: 1px solid rgba(34, 34, 34, 0.3);
   margin-bottom: 32px;
   padding-bottom: 26px;
+}
+
+@media (max-width: 425px) {
+  .search-page__breadcrumbs {
+    padding-bottom: 11px;
+  }
+  .search-page__breadcrumbs li {
+    font-size: 10px;
+  }
 }
 
 .search-page__breadcrumbs li:first-child {

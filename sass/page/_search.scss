@@ -1,12 +1,20 @@
 .search-page {
   h1 {
     margin-bottom: 15px;
+
+    @media (max-width: $mobile-l) {
+      margin-bottom: 10px;
+    }
   }
 }
 
 .search-page__form {
   display: flex;
   margin-bottom: 23px;
+
+  @media (max-width: $mobile-l) {
+    margin-bottom: 12px;
+  }
 }
 
 .search-page__form .search-page__form-input {
@@ -17,16 +25,27 @@
 
   @media (max-width: $mobile-l) {
     padding: 6px 10px;
+    width: 62.3%;
+    font-size: 10px;
+    line-height: 14px;
   }
 
   &::-webkit-input-placeholder {
     color: #222222;
     font-size: 16px;
+
+    @media (max-width: $mobile-l) {
+      font-size: 10px;
+    }
   }
 
   &::-moz-placeholder {
     color: #222222;
     font-size: 16px;
+
+    @media (max-width: $mobile-l) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -36,7 +55,9 @@
   line-height: 19px;
 
   @media (max-width: $mobile-l) {
-    padding: 6.5px 20px;
+    padding: 8px 25px;
+    font-size: 16px;
+    line-height: 16px;
   }
 }
 
@@ -48,6 +69,11 @@
   font-size: 16px;
   line-height: 22px;
 
+  @media (max-width: $mobile-l) {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
   &:not(:last-child) {
     margin-bottom: 3px;
   }
@@ -56,6 +82,12 @@
 .search-page__text.result {
   margin-bottom: 18px;
   font-weight: 700;
+
+  @media (max-width: $mobile-l) {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 9px;
+  }
 }
 
 .search-page__text .word {
@@ -71,6 +103,14 @@
   border-bottom: 1px solid rgba(34, 34, 34, 0.3);
   margin-bottom: 32px;
   padding-bottom: 26px;
+
+  @media (max-width: $mobile-l) {
+    padding-bottom: 11px;
+
+    li {
+      font-size: 10px;
+    }
+  }
 
   li:first-child {
     color: $main;
