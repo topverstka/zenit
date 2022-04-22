@@ -365,6 +365,7 @@
         text-align: center;
         color: rgba(34, 34, 34, 0.7);
         margin-bottom: 7px;
+        word-break: break-all;
 
         @media (max-width: $mobile-l) {
             font-size: 12px;
@@ -438,18 +439,26 @@
     }
 }
 
+.catalog-detail-main {
+    margin-bottom: 20px;
+}
+
 .catalog-detail {
     margin-right: 30px;
 
     &__photo {
-        height: auto;
-        transition: 300ms;
+        transition: 600ms;
         user-select: none;
-        margin-bottom: 20px;
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        display: block;
 
         &--active {
-            display: block;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
         }
     }
 

@@ -613,6 +613,7 @@ if (catalogGDetailItems.length > 0) {
             itemsMainphotos.forEach(_item => {
                 _item.classList.remove('catalog-detail__photo--active')
             })
+
             itemsMainphotos[i].classList.add('catalog-detail__photo--active')
 
             item.classList.add('catalog-detail-slider__item--active')
@@ -634,11 +635,23 @@ const filedsFile = findAll('.field-file')
 filedsFile.forEach(field => {
     const input = field.querySelector('input[type="file"]')
     const placeholder = field.querySelector('.field-file__placeholder')
+    const limitation = field.querySelector('.field-file__limitation')
 
     input && input.addEventListener('change', (e) => {
-        const filename = e.currentTarget.files[0].name
-
-        placeholder.innerText = filename
+        if(e.currentTarget.files[0].size >= 6e+6) {
+            e.preventDefault()
+            e.stopPropagation()
+            limitation.innerText = "Файл не должен превышать размер 6 mb"
+            limitation.style.color = "red"
+            placeholder.innerText = "Перетащите файл сюда или нажмите для загрузки"
+            field.style.borderColor = "red"
+        } else {
+            const filename = e.currentTarget.files[0].name
+            limitation.innerText = ""
+            placeholder.innerText = filename
+            limitation.style.color = "#222"
+            field.style.borderColor = "rgba(34, 34, 34, 0.7)"
+        }
     })
 })
 
