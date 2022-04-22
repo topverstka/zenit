@@ -1386,33 +1386,33 @@ textarea {
   grid-gap: 20px 30px;
 }
 
-.form-page__forms input[type=text] {
+.form-page__forms input:not([type=submit]) {
   height: 30px;
   background: transparent;
 }
 
-.form-page__forms input[type=text]::-webkit-input-placeholder {
+.form-page__forms input:not([type=submit])::-webkit-input-placeholder {
   color: rgba(34, 34, 34, 0.3);
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
 }
 
-.form-page__forms input[type=text]:-ms-input-placeholder {
+.form-page__forms input:not([type=submit]):-ms-input-placeholder {
   color: rgba(34, 34, 34, 0.3);
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
 }
 
-.form-page__forms input[type=text]::-ms-input-placeholder {
+.form-page__forms input:not([type=submit])::-ms-input-placeholder {
   color: rgba(34, 34, 34, 0.3);
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
 }
 
-.form-page__forms input[type=text]::placeholder {
+.form-page__forms input:not([type=submit])::placeholder {
   color: rgba(34, 34, 34, 0.3);
   font-weight: 400;
   font-size: 12px;

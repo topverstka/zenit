@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px 30px;
-    input[type=text] {
+    input:not([type=submit]) {
         height: 30px;
         background: transparent;
         &::placeholder {
