@@ -3573,6 +3573,9 @@ header.mobile-grid .header_mobile {
     line-height: 16px;
     margin-bottom: 7px;
   }
+  .content-page__text p a:after {
+    bottom: 1px;
+  }
   .content-page__text h3 {
     font-size: 12px;
     line-height: 16px;

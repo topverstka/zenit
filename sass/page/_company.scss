@@ -7,20 +7,16 @@
             margin-bottom: 6px;
         }
     }
-
     &__catalog {
         display: flex;
         gap: 30px;
-
         @media (max-width: $laptop-m) {
             flex-direction: column-reverse;
-
             .block_catalog {
                 display: none;
             }
         }
     }
-
     &__aside {
         max-width: 308px;
         padding-bottom: 50px;
@@ -29,7 +25,6 @@
             padding-bottom: 0;
         }
     }
-
     &__wrapper {
         width: 100%;
     }
@@ -78,6 +73,11 @@
             font-size: 10px;
             line-height: 16px;
             margin-bottom: 7px;
+            a {
+                &:after {
+                    bottom: 1px
+                }
+            }
         }
         h3 {
             font-size: 12px;
