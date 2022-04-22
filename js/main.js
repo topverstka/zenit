@@ -550,8 +550,8 @@ const tabsItems = findAll('.tab')
 tabsLinks.forEach(tabLink => {
 
     tabsItems.forEach(item => {
-        if(item.classList.contains('tab--active'))
-        item.style.height = item.scrollHeight + "px"
+        if (item.classList.contains('tab--active'))
+            item.style.height = item.scrollHeight + "px"
     })
 
     tabLink.addEventListener('click', (e) => {
@@ -594,7 +594,7 @@ const catalogGDetailItems = findAll('.catalog-detail-slider__item')
 const catalogGDetailPhotoContainer = find('.catalog-detail-main')
 
 if (catalogGDetailItems.length > 0) {
-    
+
     catalogGDetailItems.forEach((item, i) => {
         const src = item.getAttribute('src')
 
@@ -603,7 +603,7 @@ if (catalogGDetailItems.length > 0) {
         a.classList.add('catalog-detail__photo')
         a.innerHTML = `<img src="${src}" alt="">`
 
-        if(i === 0 ) a.classList.add('catalog-detail__photo--active')
+        if (i === 0) a.classList.add('catalog-detail__photo--active')
         catalogGDetailPhotoContainer.appendChild(a);
 
         item.addEventListener('click', (e) => {
@@ -644,7 +644,7 @@ filedsFile.forEach(field => {
     const limitation = field.querySelector('.field-file__limitation')
 
     input && input.addEventListener('change', (e) => {
-        if(e.currentTarget.files[0].size >= 6e+6) {
+        if (e.currentTarget.files[0].size >= 6e+6) {
             e.preventDefault()
             e.stopPropagation()
             limitation.innerText = "Файл не должен превышать размер 6 mb"
@@ -685,7 +685,10 @@ window.addEventListener('click', function(e) {
             bodyElement.classList.add('_show-padding');
             bodyElement.classList.add('_show');
             bodyElement.closest('.vakansion-page_accordion').classList.add('_show');
-
+            setTimeout(() => {
+                //   bodyElement.classList.remove('_show-padding');
+                find('.vakansion-page_accordion__body._show-padding') ? find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding') : '';
+            }, 800);
         } else {
             bodyElement.style = null;
             bodyElement.classList.remove('_show');
@@ -696,5 +699,6 @@ window.addEventListener('click', function(e) {
             }, 200);
             // setTimeout(() => find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding'), 200);
         }
+
     }
 })
