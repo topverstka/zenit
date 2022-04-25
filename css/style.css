@@ -4633,6 +4633,95 @@ header.mobile-grid .header_mobile {
   }
 }
 
+.contacts-page {
+  padding-bottom: 50px;
+}
+
+.contacts-pag__title {
+  margin-bottom: 26px;
+}
+
+.contacts-page__content {
+  display: grid;
+  grid-template-areas: 'address map' 'callback map';
+  grid-template-columns: 488px 757px;
+  column-gap: 75px;
+  margin-bottom: 50px;
+  align-items: flex-start;
+}
+
+@media (max-width: 1400px) {
+  .contacts-page__content {
+    grid-template-areas: 'address' 'map' 'callback';
+    column-gap: 0;
+    grid-template-columns: auto;
+  }
+}
+
+.contacts-page__address {
+  grid-area: address;
+  margin-bottom: 25px;
+}
+
+.contacts-page__address-text {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.contacts-page__address-text:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.contacts-page__address-text .bold {
+  margin-right: 6px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.contacts-page__callback {
+  display: block;
+  grid-area: callback;
+  max-width: 307px;
+  margin-top: 0;
+  padding: 13px 25px 20px 25px;
+}
+
+.contacts-page__callback .block_choose__form {
+  display: block;
+  text-align: center;
+}
+
+.contacts-page__callback .form-elem__area {
+  height: 30px;
+}
+
+.contacts-page__callback .form-elem__area::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.contacts-page__callback .form-elem__area::-moz-placeholder {
+  font-size: 12px;
+}
+
+.contacts-page__callback .block_choose__submit {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.contacts-page__map {
+  grid-area: map;
+  margin-top: 15px;
+  height: 350px;
+  width: 100%;
+}
+
+@media (max-width: 1400px) {
+  .contacts-page__map {
+    margin-bottom: 30px;
+  }
+}
+
 .vakansion-page_accordion {
   position: relative;
 }
