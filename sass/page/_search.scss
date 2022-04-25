@@ -23,6 +23,17 @@
   margin-right: 12px;
   border: 1px solid #222222;
 
+  &::placeholder {
+    color: $second!important;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+      display: none;
+  }
+
   @media (max-width: $mobile-l) {
     padding: 6px 10px;
     width: 62.3%;
@@ -79,9 +90,19 @@
   }
 }
 
+.search-page__text-accent {
+  color: $accent;
+}
+
 .search-page__text.result {
+  display: none;
   margin-bottom: 18px;
   font-weight: 700;
+
+  &.success,
+  &.not-found {
+    display: block;
+  }
 
   @media (max-width: $mobile-l) {
     font-size: 12px;
@@ -114,6 +135,10 @@
 
   li:first-child {
     color: $main;
+
+    &::after {
+      display: none;
+    }
   }
 
   li:last-child {
