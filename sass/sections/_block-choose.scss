@@ -8,6 +8,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: $tablet) {
+        max-height: 160px;
+    }
 }
 
 .block_choose__title {

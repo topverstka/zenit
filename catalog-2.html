@@ -304,16 +304,16 @@
                                 <span class="field-file__placeholder">Перетащите файл сюда 
                                     или нажмите для загрузки</span>
                                     <small class="field-file__limitation">Файл не должен превышать размер 6 mb</small>
-                                <input type="file" name="file" required>
+                                <input type="file" name="file" class="_required validation-file">
                             </label>
 
                             <div class="form-elem catalog-content__fields">
-                                <input class="form-elem__area" type="text" id="user_name" name="company" placeholder="Компания">
-                                <input class="form-elem__area _required" type="tel" id="user_phone" name="user_phone" placeholder="Номер телефона*" required>
+                                <input class="catalog-content__input form-elem__area" type="text" id="user_name" name="company" placeholder="Компания">
+                                <input class="catalog-content__input form-elem__area _required validation-input" type="tel" id="user_phone" name="user_phone" placeholder="Номер телефона*">
                             </div>
 
                             <div class="catalog-content__submit">
-                                <button class="btn" type="submit">Отправить заявку</button>
+                                <button class="btn" type="submit" data-submit>Отправить заявку</button>
                                 <p>Нажимая на кнопку «Отправить заявку» вы даете свое согласие на обработку <a href="#">персональных данных</a></p>
                             </div>
                         </form>

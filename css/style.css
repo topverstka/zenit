@@ -2916,6 +2916,12 @@ header.mobile-grid .header_mobile {
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .block_choose {
+    max-height: 160px;
+  }
+}
+
 .block_choose__title {
   font-weight: 700;
   font-size: 18px;
@@ -3534,6 +3540,14 @@ header.mobile-grid .header_mobile {
   height: 0;
   visibility: hidden;
   transition: 300ms;
+  padding-left: 60px;
+  margin-left: -60px;
+}
+
+@media (max-width: 992px) {
+  .catalog-nav ul > li > ul {
+    padding-left: 8px;
+  }
 }
 
 .catalog-nav ul > li > ul li > a {
@@ -3558,6 +3572,10 @@ header.mobile-grid .header_mobile {
 .catalog-nav ul > li > ul li > a:hover, .catalog-nav ul > li > ul li > a.active {
   background: #EFEFEF;
   color: #B92427;
+}
+
+.catalog-content__input {
+  font-size: 16px !important;
 }
 
 .catalog-content__text {
@@ -3776,6 +3794,8 @@ header.mobile-grid .header_mobile {
 @media (max-width: 992px) {
   .catalog-detail-list__text {
     font-size: 12px !important;
+    margin-right: 0;
+    width: 100%;
   }
 }
 
@@ -3829,6 +3849,12 @@ header.mobile-grid .header_mobile {
   border: 1px solid #FFFFFF;
 }
 
+@media (max-width: 425px) {
+  .catalog-detail__table td, .catalog-detail__table th {
+    padding: 4px 4px;
+  }
+}
+
 .catalog-detail__header {
   display: flex;
 }
@@ -3857,6 +3883,11 @@ header.mobile-grid .header_mobile {
 
 .catalog-detail__text p {
   line-height: 188%;
+}
+
+.catalog-detail .swiper {
+  margin-bottom: 0;
+  overflow: hidden;
 }
 
 .catalog-detail__tabs {
@@ -3950,10 +3981,7 @@ header.mobile-grid .header_mobile {
 }
 
 .tabs__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow-x: auto;
+  width: 100%;
 }
 
 @media (max-width: 992px) {
@@ -3966,6 +3994,11 @@ header.mobile-grid .header_mobile {
   padding: 20px 30px;
   background: #EFEFEF;
   border-radius: 1px;
+}
+
+.tabs__main .swiper {
+  overflow: hidden;
+  margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
@@ -3998,6 +4031,10 @@ header.mobile-grid .header_mobile {
   font-weight: 400;
   font-size: 18px;
   line-height: 111%;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  width: auto !important;
 }
 
 @media (max-width: 992px) {
@@ -4022,14 +4059,11 @@ header.mobile-grid .header_mobile {
 }
 
 .tab {
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
   transition: 300ms;
 }
 
-.tab--active {
-  visibility: visible;
+.tab__wrapper {
+  width: 100%;
 }
 
 @media (max-width: 992px) {

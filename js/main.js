@@ -113,6 +113,12 @@ window.addEventListener('submit', function(e) {
     }
 });
 
+
+const catalogForm = find('.catalog-content__form')
+catalogForm && catalogForm.addEventListener('submit', (e) => {
+    validationForm(e);
+})
+
 // Отправка формы
 sumbitForm()
 
@@ -565,39 +571,49 @@ for (const item of catalogNavItems) {
 
 // TABS
 
+const swiperTabsHeaderSlider = new Swiper('.tabs-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 0, 
+});
+
 const tabsLinks = findAll('.tab-link')
-const tabsItems = findAll('.tab')
 
-tabsLinks.forEach(tabLink => {
-
-    tabsItems.forEach(item => {
-        if (item.classList.contains('tab--active'))
-            item.style.height = item.scrollHeight + "px"
-    })
-
+tabsLinks.forEach((tabLink, index) => {
     tabLink.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const id = tabLink.getAttribute('href')
-        const el = find(id)
-
-        tabsItems.forEach(item => {
-            item.classList.remove('tab--active')
-            item.style.height = 0
-        })
-
-        tabsLinks.forEach(item => {
+        tabsLinks.forEach((item) => {
             item.classList.remove('tab-link--active')
         })
 
-        if (el) {
-            tabLink.classList.add('tab-link--active')
-            el.classList.add('tab--active')
+        tabLink.classList.add('tab-link--active')
 
-            el.style.height = el.scrollHeight + "px"
-        }
+        swiperTabsSlider.slideTo(index)
     })
 })
+
+const swiperTabsSlider = new Swiper('.tabs__main .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    on: {
+        slideChange: function(e) {
+            const height = e.slides[e.realIndex].querySelector('.tab__wrapper').scrollHeight
+            tabsLinks.forEach((item) => {
+                item.classList.remove('tab-link--active')
+            })
+        
+            console.log(tabsLinks)
+            tabsLinks[e.realIndex].classList.add('tab-link--active')
+        
+            if(swiperTabsHeaderSlider.slideTo)
+                swiperTabsHeaderSlider.slideTo(e.realIndex)
+        
+            e.$wrapperEl[0].style.height = height + "px"
+        }
+    }
+});
+
+
 
 
 const swiperCatalogDetail = new Swiper('.catalog-detail-slider .swiper', {
