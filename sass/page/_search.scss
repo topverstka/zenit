@@ -23,39 +23,26 @@
   margin-right: 12px;
   border: 1px solid #222222;
 
-  &::placeholder {
-    color: $second!important;
-  }
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-      display: none;
-  }
-
   @media (max-width: $mobile-l) {
     padding: 6px 10px;
     width: 62.3%;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 14px;
   }
 
-  &::-webkit-input-placeholder {
-    color: #222222;
+  &::-webkit-input-placeholder {    
     font-size: 16px;
 
     @media (max-width: $mobile-l) {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 
   &::-moz-placeholder {
-    color: #222222;
     font-size: 16px;
 
     @media (max-width: $mobile-l) {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 }
@@ -81,7 +68,7 @@
   line-height: 22px;
 
   @media (max-width: $mobile-l) {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 16px;
   }
 
