@@ -4275,21 +4275,12 @@ header.mobile-grid .header_mobile {
 @media (max-width: 425px) {
   .reviews-page__info {
     margin-bottom: 8px;
-    font-size: 10px;
-    line-height: 16px;
   }
 }
 
 .reviews-page__text {
   font-size: 12px;
   line-height: 20px;
-}
-
-@media (max-width: 425px) {
-  .reviews-page__text {
-    font-size: 10px;
-    line-height: 16px;
-  }
 }
 
 @media (max-width: 425px) {
@@ -4601,10 +4592,6 @@ header.mobile-grid .header_mobile {
 }
 
 @media (max-width: 568px) {
-  .certificates-page__text {
-    font-size: 10px;
-    line-height: 16px;
-  }
   .certificates-page__text:not(:last-child) {
     margin-bottom: 0;
   }
