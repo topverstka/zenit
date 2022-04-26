@@ -1789,6 +1789,7 @@ header.mobile-grid .header_mobile {
 .header_mobile._active .header_mobile__search input {
   width: 100%;
   margin-left: 10px;
+  -webkit-appearance: none;
 }
 
 .header_mobile._active .search-esc {
