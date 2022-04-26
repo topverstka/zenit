@@ -45,6 +45,7 @@ input,
 button,
 textarea {
     font-family: inherit;
+    -webkit-appearance: none;
 }
 
 input::-ms-clear {
@@ -53,12 +54,14 @@ input::-ms-clear {
 
 input[type="submit"] {
     cursor: pointer;
+    -webkit-appearance: none;
 }
 
 button {
     background: none;
     cursor: pointer;
     transition: $tr;
+    -webkit-appearance: none;
 }
 
 button::-moz-focus-inner {
@@ -85,7 +88,8 @@ ol li {
     list-style-position: inside;
 }
 
-img, svg {
+img,
+svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -101,5 +105,3 @@ h6 {
     font-size: inherit;
     font-weight: inherit;
 }
-
-
