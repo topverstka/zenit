@@ -22,6 +22,7 @@
   width: 420px;
   margin-right: 12px;
   border: 1px solid #222222;
+  color: var(--main);
 
   @media (max-width: $mobile-l) {
     padding: 6px 10px;
@@ -129,5 +130,9 @@
 
   li:last-child {
     color: rgba(34, 34, 34, 0.3);
+
+    &:hover {
+      color: var(--accent);
+    }
   }
 }
