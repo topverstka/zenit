@@ -20,6 +20,7 @@
         font-weight: 400;
         font-size: 16px;
     }
+    
 }
 
 .catalog-item {
@@ -184,7 +185,6 @@
                 height: 0;
                 visibility: hidden;
                 transition: 300ms;
-<<<<<<< HEAD
                 padding-left: 60px;
                 margin-left: -60px;
                 @media (max-width: $laptop-m) {
@@ -193,9 +193,6 @@
 
 
                 li > a {
-=======
-                li>a {
->>>>>>> 6622ebdb82b2495319e5c41181db3de28ed397bf
                     font-weight: 400;
                     font-size: 18px;
                     line-height: 111%;
@@ -456,15 +453,12 @@
             line-height: 188%;
         }
     }
-<<<<<<< HEAD
 
     .swiper {
         margin-bottom: 0;
         overflow: hidden;
     }
 
-=======
->>>>>>> 6622ebdb82b2495319e5c41181db3de28ed397bf
     &__tabs {
         max-width: 718px;
         margin-top: 70px;
@@ -550,15 +544,8 @@
 }
 
 .tabs__header {
-<<<<<<< HEAD
     width: 100%;
 
-=======
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow-x: auto;
->>>>>>> 6622ebdb82b2495319e5c41181db3de28ed397bf
     @media (max-width: $laptop-m) {
         white-space: nowrap;
     }
@@ -568,15 +555,12 @@
     padding: 20px 30px;
     background: #EFEFEF;
     border-radius: 1px;
-<<<<<<< HEAD
     
     .swiper {
         overflow: hidden;
         margin-bottom: 0;
     }
 
-=======
->>>>>>> 6622ebdb82b2495319e5c41181db3de28ed397bf
     @media (max-width: $laptop-m) {
         padding: 12px 10px;
     }
@@ -601,14 +585,11 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 111%;
-<<<<<<< HEAD
     align-items: center;
     display: flex;
     cursor: pointer;
     width:auto !important;
 
-=======
->>>>>>> 6622ebdb82b2495319e5c41181db3de28ed397bf
     @media (max-width: $laptop-m) {
         font-size: 16px;
     }
@@ -628,14 +609,9 @@
 
 .tab {
     transition: 300ms;
-<<<<<<< HEAD
 
     &__wrapper {
         width: 100%;
-=======
-    &--active {
-        visibility: visible;
->>>>>>> 6622ebdb82b2495319e5c41181db3de28ed397bf
     }
 }
 
