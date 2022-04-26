@@ -1,9 +1,17 @@
 .contacts-page {
   padding-bottom: 50px;
+
+  @media (max-width: $tablet) {
+    padding-bottom: 32px;
+  }
 }
 
-.contacts-pag__title {
+.contacts-page__title {
   margin-bottom: 26px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 5px;
+  }
 }
 
 .contacts-page__content {
@@ -24,11 +32,19 @@
   column-gap: 0;
   grid-template-columns: auto;
   }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 32px;
+  }
 }
 
 .contacts-page__address {
   grid-area: address;
   margin-bottom: 25px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 5px;
+  }
 }
 
 .contacts-page__address-text {
@@ -37,6 +53,10 @@
 
   &:not(:last-child) {
     margin-bottom: 16px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 8px;
+    }
   }
 
   .bold {
@@ -44,6 +64,17 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
+    
+    @media (max-width: $tablet) {
+      margin-right: 0;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 12px;
+    line-height: 16px;
   }
 }
 
@@ -54,9 +85,24 @@
   margin-top: 0;
   padding: 13px 25px 20px 25px;
 
+  @media (max-width: $tablet) {
+    padding: 10px 15px 16px;
+  }
+
+  .block_choose__title {
+    @media (max-width: $tablet) {
+      margin-bottom: 13px;
+      text-align: center;
+    }
+  }
+
   .block_choose__form {
     display: block;
     text-align: center;
+
+    @media (max-width: $tablet) {
+      max-width: none;
+    }
   }
 
   .form-elem__area {
@@ -69,11 +115,21 @@
     &::-moz-placeholder {
       font-size: 12px;
     }
+
+    @media (max-width: $tablet) {
+      padding-left: 8px;
+    }
   }
 
   .block_choose__submit {
     font-size: 14px;
     line-height: 16px;
+
+    @media (max-width: $tablet) {
+      margin-top: 18px;
+      max-width: 140px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -85,5 +141,20 @@
 
   @media (max-width: 1400px) {
     margin-bottom: 30px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 0;
+    margin-bottom: 16px;
+    height: 136px;
+  }
+}
+
+.contacts-page__btn {
+  @media (max-width: $tablet) {
+    padding: 6px 26px 6px 24px;
+    font-size: 16px;
+    line-height: 22px;
+    word-spacing: 2px;
   }
 }

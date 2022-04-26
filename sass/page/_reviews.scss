@@ -74,19 +74,12 @@
 
   @media (max-width: $mobile-l) {
     margin-bottom: 8px;
-    font-size: 10px;
-    line-height: 16px;
   }
 }
 
 .reviews-page__text {
   font-size: 12px;
   line-height: 20px;
-
-  @media (max-width: $mobile-l) {
-    font-size: 10px;
-    line-height: 16px;
-  }
 }
 
 .reviews-page__btn {

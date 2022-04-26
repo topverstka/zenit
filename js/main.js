@@ -459,30 +459,69 @@ document.querySelector('.footer_scroll_top').addEventListener('click', function(
 });
 
 function showMenu(target) {
-    let flage = false;
-    let heightElement = document.querySelector(target).scrollHeight;
-    document.querySelectorAll('.dropdown').forEach(i => {
-        i.addEventListener('click', () => {
+    window.addEventListener('click', function(e) {
+        if (e.target.classList.contains(target.replace('.', '')) || e.target.closest(target)) {
+            // console.log(e.target)
+            let targetElement = e.target.closest(target) ? e.target.closest(target) : e.target;
+            let heightElement = e.target.querySelector('ul') ? e.target.querySelector('ul').scrollHeight : e.target.closest(target).querySelector('ul').scrollHeight
+            let childrenElement = 'header-all__bottom__list-children-li';
+            if (!targetElement.querySelector('ul').style.height) {
+                e.preventDefault();
+                if (targetElement &&
+                    (e.target.classList.contains(childrenElement) || e.target.closest('.' + childrenElement))) {
 
-            if (!i.querySelector(target).style.height) {
-                document.querySelectorAll(target).forEach(el => {
-                    el.classList.remove('_show');
-                    el.style = null;
-                });
-                i.querySelector(target).style.height = heightElement + 'px';
-                i.querySelector(target).classList.add('_show');
 
+
+                    targetElement.querySelector('ul').style.height = heightElement + 'px';
+                    targetElement.querySelector('ul').classList.add('_show');
+                    targetElement.classList.add('_show');
+                    targetElement.closest('.header-all__bottom__list-children').style.height = e.target.closest('.header-all__bottom__list-children').scrollHeight + heightElement + 'px'
+
+                } else {
+                    document.querySelectorAll(target).forEach(el => {
+                        el.classList.remove('_show');
+                        el.querySelector('ul').classList.remove('_show');
+                        el.querySelector('ul').style = null;
+                    });
+
+
+                    targetElement.querySelector('ul').style.height = heightElement + 'px';
+                    targetElement.querySelector('ul').classList.add('_show');
+                    if (targetElement.querySelector(`.${childrenElement} ul`)) {
+                        targetElement.querySelector(`.${childrenElement} ul`).style = null;
+                        targetElement.classList.remove('_show');
+                    }
+                }
             } else {
-                i.querySelector(target).style.height = null;
-                i.querySelector(target).classList.remove('_show');
+
+                if ((e.target.closest('.dropdown') && e.target.closest('.dropdown').querySelector('ul') && !e.target.closest('.dropdown').classList.contains('header-all__bottom__list')) ||
+                    (e.target.classList.contains('dropdown') && e.target.querySelector('ul'))) {
+                    e.preventDefault();
+
+                    if (e.target.classList.contains('header-all__bottom__list-children-li-submenu') || e.target.closest('.header-all__bottom__list-children-li-submenu')) {
+                        location.href = e.target.href
+                        return false;
+
+                    }
+                }
+
+
+                targetElement.querySelector('ul').style.height = null;
+                targetElement.querySelector('ul').classList.remove('_show');
+                targetElement.closest('.header-all__bottom__list-children') ? targetElement.closest('.header-all__bottom__list-children').style.height = e.target.closest('.header-all__bottom__list-children').scrollHeight - heightElement + 'px' : '';
+                if (targetElement.querySelector(`.${childrenElement} ul`)) {
+                    targetElement.querySelector(`.${childrenElement} ul`).style = null;
+                    targetElement.classList.remove('_show');
+                }
 
             }
-
-        });
+        }
     });
+
 }
 
-showMenu('.header-all__bottom__list-children');
+showMenu('.dropdown');
+
 
 if (window.matchMedia('(max-width: 992px)').matches) {
     document.querySelector('header').classList.add('mobile-grid');
