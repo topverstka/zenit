@@ -137,6 +137,14 @@ header {
     }
 }
 
+.browser-Safari {
+    @media (max-width: $laptop-m) {
+        .header-all {
+            top: 38px
+        }
+    }
+}
+
 .header_mobile {
     display: none;
     align-items: center;

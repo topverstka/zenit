@@ -612,7 +612,7 @@ for (const item of catalogNavItems) {
 
 const swiperTabsHeaderSlider = new Swiper('.tabs-slider', {
     slidesPerView: 'auto',
-    spaceBetween: 0, 
+    spaceBetween: 0,
 });
 
 const tabsLinks = findAll('.tab-link')
@@ -640,13 +640,13 @@ const swiperTabsSlider = new Swiper('.tabs__main .swiper', {
             tabsLinks.forEach((item) => {
                 item.classList.remove('tab-link--active')
             })
-        
+
             console.log(tabsLinks)
             tabsLinks[e.realIndex].classList.add('tab-link--active')
-        
-            if(swiperTabsHeaderSlider.slideTo)
+
+            if (swiperTabsHeaderSlider.slideTo)
                 swiperTabsHeaderSlider.slideTo(e.realIndex)
-        
+
             e.$wrapperEl[0].style.height = height + "px"
         }
     }
@@ -738,43 +738,34 @@ filedsFile.forEach(field => {
 })
 
 
-
-
-
-
-
-window.addEventListener('click', function(e) {
-    if (e.target.classList.contains('vakansion-page_accordion__header') || e.target.closest('.vakansion-page_accordion__header')) {
-
-
-        let parentElement = e.target.closest('.vakansion-page_accordion');
-        let bodyElement = parentElement.querySelector('.vakansion-page_accordion__body');
-
-        if (!bodyElement.style.height) {
-            findAll('.vakansion-page_accordion__body').forEach(i => {
-                i.style = null;
-                i.classList.remove('_show');
-                // find('.vakansion-page_accordion__body._show-padding') ? setTimeout(() => find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding'), 200) : '';
-                i.closest('.vakansion-page_accordion').classList.remove('_show');
-            });
-            bodyElement.style.height = bodyElement.scrollHeight + 'px';
-            bodyElement.classList.add('_show-padding');
-            bodyElement.classList.add('_show');
-            bodyElement.closest('.vakansion-page_accordion').classList.add('_show');
+function accordBox(i) {
+    let parentElement = i.closest('.vakansion-page_accordion');
+    let bodyElement = parentElement.querySelector('.vakansion-page_accordion__body');
+    let heightParent = parentElement.querySelector('.vakansion-page_accordion__header').scrollHeight;
+    if (!parentElement.style.height) {
+        findAll('.vakansion-page_accordion').forEach(el => {
+            el.classList.remove('_show');
+            el.style = null;
+            el.querySelector('.vakansion-page_accordion__body').style = null;
+            el.querySelector('.vakansion-page_accordion__body').classList.remove('_show');
+        });
+        parentElement.style.height = (bodyElement.scrollHeight + heightParent) + 'px';
+        bodyElement.style.height = bodyElement.scrollHeight + 'px';
+        bodyElement.classList.add('_show');
+        parentElement.classList.add('_show');
+        if (window.innerWidth <= 992) {
             setTimeout(() => {
-                //   bodyElement.classList.remove('_show-padding');
-                find('.vakansion-page_accordion__body._show-padding') ? find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding') : '';
-            }, 800);
-        } else {
-            bodyElement.style = null;
-            bodyElement.classList.remove('_show');
-            bodyElement.closest('.vakansion-page_accordion').classList.remove('_show');
-            setTimeout(() => {
-                bodyElement.classList.remove('_show-padding');
-                find('.vakansion-page_accordion__body._show-padding') ? find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding') : '';
-            }, 200);
-            // setTimeout(() => find('.vakansion-page_accordion__body._show-padding').classList.remove('_show-padding'), 200);
+                parentElement.scrollIntoView({ block: "start", behavior: "smooth" });
+            }, 350);
         }
-
+    } else {
+        parentElement.style = null;
+        bodyElement.style = null;
+        bodyElement.classList.remove('_show');
+        parentElement.classList.remove('_show');
     }
-})
+}
+
+document.querySelectorAll('.vakansion-page_accordion__header').forEach(i => {
+    i.addEventListener('click', () => accordBox(i));
+});

@@ -19,7 +19,7 @@
             margin-bottom: 20px;
             font-size: 18px;
             line-height: 30px;
-            width: 365px;
+            width: auto;
         }
         .section_form__form {
             display: flex;
@@ -44,7 +44,7 @@
         }
         .section_form__form {
             width: 156px;
-            input[type=text] {
+            input:not([type=submit]) {
                 margin-bottom: 8px;
                 margin-right: 0;
                 width: 100%;

@@ -1,8 +1,26 @@
 .vakansion-page_accordion {
     position: relative;
+    height: 50px;
+    transition: $tr linear;
     &._show {
         .vakansion-page_accordion__header-btn svg {
             transform: rotate(90deg)
+        }
+    }
+    @media (min-width: $minHover) {
+        &:hover {
+            .vakansion-page_accordion__header-btn {
+                color: $accent;
+                svg path {
+                    stroke: $accent
+                }
+            }
+        }
+    }
+    @media (max-width:480px) {
+        height: 32px;
+        &._show {
+            margin-bottom: 10px;
         }
     }
 }
@@ -20,16 +38,16 @@
     height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: height $tr ease, opacity .2s linear;
+    transition: height .4s ease, opacity 0.6s ease;
     background: $bg-block;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15%);
     border-radius: $radius;
     margin-top: 10px;
     padding: 33px 20px 30px 20px;
-    position: absolute;
+    // position: absolute;
     &._show {
         opacity: 1;
-        position: static;
+        // position: static;
     }
     &._show-padding {
         position: static;
