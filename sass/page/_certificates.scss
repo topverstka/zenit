@@ -41,6 +41,10 @@
   width: 533px;
   column-gap: 30px;
 
+  a {
+    display: block;
+  }
+
   @media (max-width: 1120px) {
     width: 100%;
   }
