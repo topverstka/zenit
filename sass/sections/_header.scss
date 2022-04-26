@@ -177,6 +177,7 @@ header {
             height: 14px
         }
         input {
+            -webkit-appearance: none;
             width: 0;
             &::-webkit-search-decoration,
             &::-webkit-search-cancel-button,

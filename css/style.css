@@ -1817,6 +1817,7 @@ header.mobile-grid .header_mobile {
 }
 
 .header_mobile .header_mobile__search input {
+  -webkit-appearance: none;
   width: 0;
 }
 
