@@ -3002,12 +3002,15 @@ header.mobile-grid .header_mobile {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }
 
 @media (max-width: 768px) {
   .block_choose {
     max-height: 160px;
   }
+=======
+>>>>>>> b3320274ff57cb3be1a419d33aa2af21aae162fa
 }
 
 .block_choose__title {
@@ -4075,7 +4078,14 @@ header.mobile-grid .header_mobile {
 }
 
 .tabs__header {
+<<<<<<< HEAD
   width: 100%;
+=======
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+>>>>>>> b3320274ff57cb3be1a419d33aa2af21aae162fa
 }
 
 @media (max-width: 992px) {
@@ -4153,6 +4163,12 @@ header.mobile-grid .header_mobile {
 }
 
 .tab {
+<<<<<<< HEAD
+=======
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+>>>>>>> b3320274ff57cb3be1a419d33aa2af21aae162fa
   transition: 300ms;
 }
 
@@ -4555,7 +4571,6 @@ header.mobile-grid .header_mobile {
 }
 
 .search-page__text.result {
-  display: none;
   margin-bottom: 18px;
   font-weight: 700;
 }
