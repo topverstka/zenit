@@ -24,7 +24,7 @@
                 <div class="header-all">
                     <div class="header-all__top fl-align">
                         <div class="header-all__top-box fl-align">
-                            <a href="tel:88007756384" class="header-all__top-phone  fl-align">
+                            <a href="tel:+78007756384" class="header-all__top-phone  fl-align">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.72514 4.03387L8.5593 3.87615C8.14866 3.45031 8.21973 3.25316 8.62248 2.85098L10.7704 0.682355C11.4101 0.0357097 11.5286 -0.271841 12.1366 0.303831L12.3025 0.461549L8.72514 4.03387ZM9.14368 4.38874L12.6183 0.918932C13.1711 1.66021 14.4662 3.65535 13.8266 5.13001C13.2501 6.44696 12.9658 6.51005 12.2472 7.49579C10.7862 9.15972 8.94625 10.9419 7.50901 12.2825C6.51399 13.0002 6.47451 13.3314 5.13992 13.8597C3.71847 14.4196 1.66527 13.1579 0.891364 12.6295L4.36602 9.15972L5.29786 10.4372C5.56636 10.8 6.2455 10.3899 6.71931 9.91676C7.5406 9.08874 9.23054 7.40904 9.87809 6.7072C10.344 6.24193 10.7626 5.56374 10.3993 5.28773L9.14368 4.38874ZM0.441238 12.3141L0.275402 12.1485C-0.261591 11.5649 0.0463901 11.4387 0.686043 10.8079L2.84981 8.6629C3.25255 8.27649 3.44208 8.18975 3.85272 8.57616L4.01066 8.74176L0.441238 12.3141Z" fill="#222222"/>
                                     </svg> 8 (800) 775-63-84</a>
@@ -59,7 +59,19 @@
                                 <a href="" class="header-all__bottom__list-link">Каталог</a>
                                 <ul class="header-all__bottom__list-children">
                                     <li class="header-all__bottom__list-children-li"><a href="">Доставка и оплата</a></li>
-                                    <li class="header-all__bottom__list-children-li"><a href="">Как оформить заказ</a></li>
+                                    <li class="header-all__bottom__list-children-li dropdown">
+                                        <a href="">Как оформить заказ
+                                            <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.5 9L0 0L11 9.08524e-07L5.5 9Z" fill="#222222"/>
+                                            </svg>
+                                        </a>
+                                        <ul class="header-all__bottom__list-children-submenu">
+                                            <li class="header-all__bottom__list-children-li-submenu"><a href="">Возврат товара</a></li>
+                                            <li class="header-all__bottom__list-children-li-submenu"><a href="">Гарантийное обслуживание</a></li>
+                                            <li class="header-all__bottom__list-children-li-submenu"><a href="">Техническая поддержка</a></li>
+                                        </ul>
+
+                                    </li>
                                     <li class="header-all__bottom__list-children-li"><a href="">Возврат товара</a></li>
                                     <li class="header-all__bottom__list-children-li"><a href="">Гарантийное обслуживание</a></li>
                                     <li class="header-all__bottom__list-children-li"><a href="">Техническая поддержка</a></li>
@@ -195,7 +207,7 @@
                             <a href="">Контакты</a>
                         </li>
                     </ul>
-                    <a href="tel:8 (800) 775-63-84" class="footer_phone">8 (800) 775-63-84</a>
+                    <a href="tel:88007756384" class="footer_phone">8 (800) 775-63-84</a>
                     <button class="footer_btn btn">Заказать звонок</button>
                     <div class="footer_scroll_top">
                         <svg>
@@ -229,7 +241,7 @@
             <div class="modal__content">
                 <h2 class="modal__title">Оставьте заявку</h2>
                 <p class="modal__text">И наш менеджер свяжется с Вами<br> в ближайшее время</p>
-                <form action="#" method="POST" class="form modal__form" id="modal__form">
+                <form action="#" method="POST" class="form modal__form">
                     <div class="form-elem">
                         <input class="form-elem__area _required" type="tel" id="user_phone" name="user_phone" placeholder="Номер телефона*">
                     </div>
@@ -261,7 +273,7 @@
         <div class="modal__body">
             <div class="modal__content">
                 <h2 class="modal__title">Оставить отзыв</h2>
-                <form action="#" method="POST" class="form modal__form" id="modal__form">
+                <form action="#" method="POST" class="form modal__form">
                     <div class="form-elem">
                         <input class="form-elem__area _required" type="text" id="user_name" name="name" placeholder="Ваше имя*">
                     </div>
@@ -269,7 +281,7 @@
                         <input class="form-elem__area" type="text" id="user_company" name="company" placeholder="Город и наименование организации*">
                     </div>
                     <div class="form-elem">
-                        <textarea class="form-elem__area" type="text" id="user_message" name="message" placeholder="Текст отзыва (не более 270 символов)"></textarea>
+                        <textarea class="form-elem__area" id="user_message" name="message" placeholder="Текст отзыва (не более 270 символов)"></textarea>
                     </div>
                     <button class="btn modal__submit" type="submit">Оставить отзыв</button>
                 </form>
