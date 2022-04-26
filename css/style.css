@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @font-face {
   font-family: "Noto Sans";
   font-style: normal;
@@ -4096,7 +4097,7 @@ header.mobile-grid .header_mobile {
 
 .tabs__main .swiper {
   overflow: hidden;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 @media (max-width: 992px) {
@@ -4777,7 +4778,8 @@ header.mobile-grid .header_mobile {
 
 .contacts-page__content {
   display: grid;
-  grid-template-areas: 'address map' 'callback map';
+  grid-template-areas: 'address map'
+ 'callback map';
   grid-template-columns: 488px 757px;
   column-gap: 75px;
   margin-bottom: 50px;
@@ -4786,7 +4788,9 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 1400px) {
   .contacts-page__content {
-    grid-template-areas: 'address' 'map' 'callback';
+    grid-template-areas: 'address'
+ 'map'
+ 'callback';
     column-gap: 0;
     grid-template-columns: auto;
   }
