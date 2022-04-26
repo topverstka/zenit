@@ -63,6 +63,10 @@ body {
     align-items: center
 }
 
+#spotlight {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 @import '_grid'; // Сетка
 // Анимация
 @import './_animation';
