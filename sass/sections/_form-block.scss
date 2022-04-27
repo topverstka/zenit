@@ -1,9 +1,14 @@
 .section_form {
     margin-top: 90px;
     background: $bg-block;
-    padding: 46px 0 57px;
+    // padding: 46px 0 57px;
     height: 440px;
     position: relative;
+    .container {
+        position: relative;
+        height: 100%;
+        padding: 46px 15px 57px 15px;
+    }
     h2 {
         font-weight: 700;
         font-size: 50px;
@@ -29,9 +34,11 @@
         }
     }
     @media (max-width:500px) {
-        padding: 16px 0 34px;
         height: auto;
         margin-top: 32px;
+        .container {
+            padding: 16px 15px 34px 15px;
+        }
         h2 {
             font-size: 21px;
             line-height: 32px;
@@ -67,6 +74,11 @@
             text-align: center;
             line-height: 12px;
             margin-top: 6px
+        }
+    }
+    @media (max-width: $mobile-l) {
+        .container {
+            padding: 16px 8px 34px 8px;
         }
     }
 }
@@ -106,7 +118,8 @@
 
 .section_form__right-picture {
     position: absolute;
-    right: 65px;
+    right: 14px;
+    z-index: 1;
     bottom: 0;
     width: 366px;
     height: 530px;
