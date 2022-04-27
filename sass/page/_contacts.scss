@@ -71,6 +71,7 @@
     padding: 13px 25px 20px 25px;
     @media (max-width: $tablet) {
         padding: 10px 15px 16px;
+        max-width: none;
     }
     .block_choose__title {
         @media (max-width: $tablet) {
@@ -95,6 +96,7 @@
     .block_choose__submit {
         font-size: 14px;
         line-height: 16px;
+        font-weight: 400;
         @media (max-width: $tablet) {
             margin-top: 18px;
             max-width: 140px;

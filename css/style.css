@@ -4930,6 +4930,7 @@ header.mobile-grid .header_mobile {
 @media (max-width: 768px) {
   .contacts-page__callback {
     padding: 10px 15px 16px;
+    max-width: none;
   }
 }
 
@@ -4962,6 +4963,7 @@ header.mobile-grid .header_mobile {
 .contacts-page__callback .block_choose__submit {
   font-size: 14px;
   line-height: 16px;
+  font-weight: 400;
 }
 
 @media (max-width: 768px) {
