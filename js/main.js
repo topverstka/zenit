@@ -198,11 +198,11 @@ const swiper = new Swiper('.swiper-container', {
     loop: true, // Бесконечный слайдер
     centeredSlides: true, // Размещать слайдеры по центру
 
-    effect: 'coverflow',
-    coverflowEffect: {
-        rotate: 30,
-        slideShadows: false,
-    },
+    // effect: 'coverflow',
+    // coverflowEffect: {
+    //     rotate: 30,
+    //     slideShadows: false,
+    // },
 
     autoplay: { // автопрокрутка
         delay: 5000, // задержка
