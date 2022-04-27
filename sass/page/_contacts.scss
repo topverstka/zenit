@@ -86,24 +86,10 @@
         }
     }
     .form-elem__area {
-        height: 30px;
-        &::-webkit-input-placeholder {
-            font-size: 12px;
-        }
-        &::-moz-placeholder {
-            font-size: 12px;
-        }
         @media (max-width: $tablet) {
             padding-left: 8px;
             padding: 5px 10px;
-            height: 36px;
             font-size: 14px;
-            &::-webkit-input-placeholder {
-                font-size: 14px;
-            }
-            &::-moz-placeholder {
-                font-size: 14px;
-            }
         }
     }
     .block_choose__submit {

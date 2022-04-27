@@ -4940,29 +4940,10 @@ header.mobile-grid .header_mobile {
   }
 }
 
-.contacts-page__callback .form-elem__area {
-  height: 30px;
-}
-
-.contacts-page__callback .form-elem__area::-webkit-input-placeholder {
-  font-size: 12px;
-}
-
-.contacts-page__callback .form-elem__area::-moz-placeholder {
-  font-size: 12px;
-}
-
 @media (max-width: 768px) {
   .contacts-page__callback .form-elem__area {
     padding-left: 8px;
     padding: 5px 10px;
-    height: 36px;
-    font-size: 14px;
-  }
-  .contacts-page__callback .form-elem__area::-webkit-input-placeholder {
-    font-size: 14px;
-  }
-  .contacts-page__callback .form-elem__area::-moz-placeholder {
     font-size: 14px;
   }
 }
