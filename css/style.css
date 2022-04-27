@@ -596,23 +596,18 @@ body._lock {
   .form-elem input:not([type=submit]) {
     height: 36px;
     padding: 5px 10px;
-    line-height: 100;
   }
   .form-elem input:not([type=submit])::-webkit-input-placeholder {
     font-size: 14px;
-    line-height: 100;
   }
   .form-elem input:not([type=submit]):-ms-input-placeholder {
     font-size: 14px;
-    line-height: 100;
   }
   .form-elem input:not([type=submit])::-ms-input-placeholder {
     font-size: 14px;
-    line-height: 100;
   }
   .form-elem input:not([type=submit])::placeholder {
     font-size: 14px;
-    line-height: 100;
   }
 }
 
@@ -2643,6 +2638,10 @@ header.mobile-grid .header_mobile {
   position: static;
 }
 
+.banner-top .swiper .swiper-slide {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
 .banner-top .swiper .swiper-slide img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -2738,8 +2737,8 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 425px) {
   .banner-text:after {
-    background: url(../img/crop-1.png) 0 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(55.73%, #59636F), to(rgba(89, 99, 111, 0)));
-    background: url(../img/crop-1.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 55.73%, rgba(89, 99, 111, 0) 100%);
+    background: url(../img/crop-1.png) 0 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(55.73%, #59636F), color-stop(123%, rgba(89, 99, 111, 0)));
+    background: url(../img/crop-1.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 55.73%, rgba(89, 99, 111, 0) 123%);
   }
   .banner-text .banner-logo {
     width: 67px;
