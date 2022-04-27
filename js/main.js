@@ -730,7 +730,7 @@ filedsFile.forEach(field => {
             e.stopPropagation()
             limitation.innerText = "Файл не должен превышать размер 6 mb"
             limitation.style.color = "red"
-            placeholder.innerText = "Перетащите файл сюда или нажмите для загрузки"
+            placeholder.innerText = "Перетащите файл сюда <br> или нажмите для загрузки"
             field.style.borderColor = "red"
         } else {
             const filename = e.currentTarget.files[0].name

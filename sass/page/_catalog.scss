@@ -1,3 +1,7 @@
+.lg-outer {
+    z-index: 9999 !important;
+}
+
 .catalog-items {
     width: 100%;
     display: grid;
@@ -133,6 +137,7 @@
                 margin-bottom: 1px;
                 padding-right: 45px;
                 position: relative;
+
                 @media (max-width: $laptop-m) {
                     margin-left: 0;
                     padding-left: 8px;
@@ -175,6 +180,7 @@
                 }
                 &.active {
                     &+ul {
+                        margin-bottom: 1px;
                         visibility: visible;
                     }
                 }
@@ -186,8 +192,11 @@
                 transition: 300ms;
                 padding-left: 60px;
                 margin-left: -60px;
+                
+
                 @media (max-width: $laptop-m) {
-                    padding-left: 8px;
+                    padding-left: 0;
+                    margin-left: 0;
                 }
                 li>a {
                     font-weight: 400;
@@ -195,9 +204,13 @@
                     line-height: 111%;
                     color: rgba(34, 34, 34, 0.7);
                     text-transform: initial;
+
                     @media (max-width: $laptop-m) {
-                        font-size: 12px;
+                        margin-left: 0;
+                        padding-left: 8px;
                         line-height: 160%;
+                        font-size: 12px;
+                        padding-right: 28px;
                     }
                     &::before {
                         content: none;
