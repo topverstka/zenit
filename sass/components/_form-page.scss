@@ -57,7 +57,12 @@
         grid-gap: 16px;
         textarea {
             grid-column: auto;
-            height: 160px
+            height: 160px;
+            padding: 5px 10px;
+            font-size: 14px;
+            &::placeholder {
+                font-size: 14px
+            }
         }
         input:not([type=submit]) {
             height: 36px;

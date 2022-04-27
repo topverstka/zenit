@@ -1489,6 +1489,20 @@ textarea {
   .form-page__forms textarea {
     grid-column: auto;
     height: 160px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .form-page__forms textarea::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .form-page__forms textarea:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .form-page__forms textarea::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .form-page__forms textarea::placeholder {
+    font-size: 14px;
   }
   .form-page__forms input:not([type=submit]) {
     height: 36px;
@@ -2693,7 +2707,7 @@ header.mobile-grid .header_mobile {
   height: 100%;
   background: url(../img/crop.png) 100% 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(50%, #59636F), to(rgba(89, 99, 111, 0)));
   background: url(../img/crop.png) 100% 0% no-repeat, linear-gradient(90deg, #59636F 50%, rgba(89, 99, 111, 0) 100%);
-  background-size: 100%;
+  background-size: cover;
   z-index: -1;
 }
 
@@ -2707,6 +2721,11 @@ header.mobile-grid .header_mobile {
 }
 
 @media (max-width: 768px) {
+  .banner-text:after {
+    background: url(../img/crop.png) 0 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(55.73%, #59636F), to(rgba(89, 99, 111, 0)));
+    background: url(../img/crop.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 55.73%, rgba(89, 99, 111, 0) 100%);
+    background-size: cover;
+  }
   .banner-text .banner-logo {
     width: 125px;
     margin: 16px 0 6px 0;
@@ -2719,8 +2738,8 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 425px) {
   .banner-text:after {
-    background: url(../img/crop.png) 0 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(55.73%, #59636F), to(rgba(89, 99, 111, 0)));
-    background: url(../img/crop.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 55.73%, rgba(89, 99, 111, 0) 100%);
+    background: url(../img/crop-1.png) 0 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(55.73%, #59636F), to(rgba(89, 99, 111, 0)));
+    background: url(../img/crop-1.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 55.73%, rgba(89, 99, 111, 0) 100%);
   }
   .banner-text .banner-logo {
     width: 67px;
