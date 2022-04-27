@@ -119,6 +119,14 @@
     }
 }
 
+.browser-Safari {
+    @media (max-width: $mobile-l) {
+        &:after {
+            background: url(../img/crop-1.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 48.73%, rgba(89, 99, 111, 0) 100%)
+        }
+    }
+}
+
 .banner-logo {
     width: 225px;
     margin-bottom: 30px;

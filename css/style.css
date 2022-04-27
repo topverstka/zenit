@@ -2764,6 +2764,13 @@ header.mobile-grid .header_mobile {
   }
 }
 
+@media (max-width: 425px) {
+  .browser-Safari:after {
+    background: url(../img/crop-1.png) 0 0% no-repeat, -webkit-gradient(linear, left top, right top, color-stop(48.73%, #59636F), to(rgba(89, 99, 111, 0)));
+    background: url(../img/crop-1.png) 0 0% no-repeat, linear-gradient(90deg, #59636F 48.73%, rgba(89, 99, 111, 0) 100%);
+  }
+}
+
 .banner-logo {
   width: 225px;
   margin-bottom: 30px;
