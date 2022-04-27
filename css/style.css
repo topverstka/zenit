@@ -588,30 +588,30 @@ body._lock {
   margin: 8px 0 0 0;
 }
 
-.form-elem input {
+.form-elem input:not([type=submit]) {
   height: 40px;
 }
 
 @media (max-width: 425px) {
-  .form-elem input {
-    height: 32px;
-    padding: 9px 10px;
+  .form-elem input:not([type=submit]) {
+    height: 36px;
+    padding: 5px 10px;
     line-height: 100;
   }
-  .form-elem input::-webkit-input-placeholder {
-    font-size: 10px;
+  .form-elem input:not([type=submit])::-webkit-input-placeholder {
+    font-size: 14px;
     line-height: 100;
   }
-  .form-elem input:-ms-input-placeholder {
-    font-size: 10px;
+  .form-elem input:not([type=submit]):-ms-input-placeholder {
+    font-size: 14px;
     line-height: 100;
   }
-  .form-elem input::-ms-input-placeholder {
-    font-size: 10px;
+  .form-elem input:not([type=submit])::-ms-input-placeholder {
+    font-size: 14px;
     line-height: 100;
   }
-  .form-elem input::placeholder {
-    font-size: 10px;
+  .form-elem input:not([type=submit])::placeholder {
+    font-size: 14px;
     line-height: 100;
   }
 }
@@ -1490,8 +1490,22 @@ textarea {
     grid-column: auto;
     height: 160px;
   }
-  .form-page__forms input[type=text] {
-    height: 32px;
+  .form-page__forms input:not([type=submit]) {
+    height: 36px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .form-page__forms input:not([type=submit])::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .form-page__forms input:not([type=submit]):-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .form-page__forms input:not([type=submit])::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .form-page__forms input:not([type=submit])::placeholder {
+    font-size: 14px;
   }
   .form-page__forms input[type=submit] {
     font-size: 16px;
@@ -3018,23 +3032,24 @@ header.mobile-grid .header_mobile {
     margin-bottom: 8px;
     margin-right: 0;
     width: 100%;
-    padding: 9px 10px;
-    height: 32px;
+    padding: 5px 10px;
+    height: 36px;
+    font-size: 14px;
   }
   .section_form .section_form__form input:not([type=submit])::-webkit-input-placeholder {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
   }
   .section_form .section_form__form input:not([type=submit]):-ms-input-placeholder {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
   }
   .section_form .section_form__form input:not([type=submit])::-ms-input-placeholder {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
   }
   .section_form .section_form__form input:not([type=submit])::placeholder {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 14px;
   }
   .section_form .section_form__form input[type=submit] {
@@ -4240,7 +4255,7 @@ header.mobile-grid .header_mobile {
 }
 
 .catalog-content__input {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 .catalog-content__text {
@@ -5464,7 +5479,7 @@ header.mobile-grid .header_mobile {
 .contacts-page__content {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'address map' 'callback map';
+      grid-template-areas: 'address map' 'callback map';
   -ms-grid-columns: 488px 757px;
       grid-template-columns: 488px 757px;
   -webkit-column-gap: 75px;
@@ -5477,7 +5492,7 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 1400px) {
   .contacts-page__content {
-        grid-template-areas: 'address' 'map' 'callback';
+        grid-template-areas: 'address' 'map' 'callback';
     -webkit-column-gap: 0;
             column-gap: 0;
     -ms-grid-columns: auto;
@@ -5590,6 +5605,15 @@ header.mobile-grid .header_mobile {
 @media (max-width: 768px) {
   .contacts-page__callback .form-elem__area {
     padding-left: 8px;
+    padding: 5px 10px;
+    height: 36px;
+    font-size: 14px;
+  }
+  .contacts-page__callback .form-elem__area::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .contacts-page__callback .form-elem__area::-moz-placeholder {
+    font-size: 14px;
   }
 }
 

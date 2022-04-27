@@ -48,10 +48,11 @@
                 margin-bottom: 8px;
                 margin-right: 0;
                 width: 100%;
-                padding: 9px 10px;
-                height: 32px;
+                padding: 5px 10px;
+                height: 36px;
+                font-size: 14px;
                 &::placeholder {
-                    font-size: 12px;
+                    font-size: 14px;
                     line-height: 14px;
                 }
             }

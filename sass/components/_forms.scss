@@ -13,14 +13,14 @@
     }
 }
 
-.form-elem input {
+.form-elem input:not([type=submit]) {
     height: 40px;
     @media (max-width: $mobile-l) {
-        height: 32px;
-        padding: 9px 10px;
+        height: 36px;
+        padding: 5px 10px;
         line-height: 100;
         &::placeholder {
-            font-size: 10px;
+            font-size: 14px;
             line-height: 100;
         }
     }

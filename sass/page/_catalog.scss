@@ -20,7 +20,6 @@
         font-weight: 400;
         font-size: 16px;
     }
-    
 }
 
 .catalog-item {
@@ -190,9 +189,7 @@
                 @media (max-width: $laptop-m) {
                     padding-left: 8px;
                 }
-
-
-                li > a {
+                li>a {
                     font-weight: 400;
                     font-size: 18px;
                     line-height: 111%;
@@ -217,9 +214,8 @@
 }
 
 .catalog-content {
-
     &__input {
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
     &__text {
         margin-bottom: 15px;
@@ -427,7 +423,6 @@
         th {
             padding: 4px 20px;
             border: 1px solid #FFFFFF;
-
             @media (max-width: $mobile-l) {
                 padding: 4px 4px;
             }
@@ -453,16 +448,13 @@
             line-height: 188%;
         }
     }
-
     .swiper {
         margin-bottom: 0;
         overflow: hidden;
     }
-
     &__tabs {
         max-width: 718px;
         margin-top: 70px;
-
         @media (max-width: $laptop-m) {
             max-width: 100%;
             margin-top: 16px;
@@ -545,7 +537,6 @@
 
 .tabs__header {
     width: 100%;
-
     @media (max-width: $laptop-m) {
         white-space: nowrap;
     }
@@ -555,12 +546,10 @@
     padding: 20px 30px;
     background: #EFEFEF;
     border-radius: 1px;
-    
     .swiper {
         overflow: hidden;
         margin-bottom: 0 !important;
     }
-
     @media (max-width: $laptop-m) {
         padding: 12px 10px;
     }
@@ -588,8 +577,7 @@
     align-items: center;
     display: flex;
     cursor: pointer;
-    width:auto !important;
-
+    width: auto !important;
     @media (max-width: $laptop-m) {
         font-size: 16px;
     }
@@ -609,7 +597,6 @@
 
 .tab {
     transition: 300ms;
-
     &__wrapper {
         width: 100%;
     }

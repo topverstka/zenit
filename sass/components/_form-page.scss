@@ -59,8 +59,13 @@
             grid-column: auto;
             height: 160px
         }
-        input[type=text] {
-            height: 32px;
+        input:not([type=submit]) {
+            height: 36px;
+            padding: 5px 10px;
+            font-size: 14px;
+            &::placeholder {
+                font-size: 14px
+            }
         }
         input[type=submit] {
             font-size: 16px;
