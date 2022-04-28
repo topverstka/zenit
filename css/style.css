@@ -4417,7 +4417,7 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 768px) {
   .reviews-page__list {
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 }
 
