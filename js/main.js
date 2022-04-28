@@ -191,6 +191,13 @@ function menu() {
     })
 }
 
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mobile-grid')) {
+        find('.header-all').classList.remove('_show');
+        find('.header_mobile .burger').classList.remove('burger_close')
+    }
+});
+
 const swiper = new Swiper('.swiper-container', {
 
     slidesPerView: 1, // Кол-во показываемых слайдов

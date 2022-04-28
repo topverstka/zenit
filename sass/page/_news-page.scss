@@ -167,6 +167,9 @@
 
 .detail-news-page__footer-social-link {
     margin-left: 20px;
+    img {
+        height: 20px
+    }
     @media (max-width: $mobile-l) {
         margin-left: 10px;
         display: flex
