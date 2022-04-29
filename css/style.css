@@ -1268,7 +1268,7 @@ textarea {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .block_catalog {
     display: none;
   }
@@ -1307,7 +1307,7 @@ textarea {
   margin-bottom: 25px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .consultant_block {
     width: 100%;
   }
@@ -3699,7 +3699,13 @@ header.mobile-grid .header_mobile {
   margin-bottom: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
+  .content-page__container .form-page {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
   .content-page__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3742,7 +3748,7 @@ header.mobile-grid .header_mobile {
 
 @media (max-width: 992px) {
   .content-page__text {
-    margin-right: 50px;
+    margin-right: 0;
   }
 }
 
